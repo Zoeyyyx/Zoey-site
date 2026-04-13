@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoey | 视觉作品</title>
+  <meta name="description" content="Zoey 的视觉作品页面，可同时收纳摄影与绘画。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery">
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="回到首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>notes & works</em>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
+    </header>
+
+    <main class="subpage-main visual-page">
+      <section class="sub-hero whiteboard visual-hero">
+        <div class="visual-hero-copy">
+          <p class="section-label">Image Works</p>
+          <h1>视觉</h1>
+          <p class="lead">这里同时收纳摄影与绘画。它们不是彼此分开的两栏，而是同一条视觉线索里慢慢长出的不同作品。</p>
+        </div>
+        <div class="visual-filter" role="tablist" aria-label="视觉作品筛选">
+          <button class="visual-filter-button is-active" type="button" data-visual-filter="all" aria-pressed="true">全部</button>
+          <button class="visual-filter-button" type="button" data-visual-filter="photo" aria-pressed="false">摄影</button>
+          <button class="visual-filter-button" type="button" data-visual-filter="drawing" aria-pressed="false">绘画</button>
+        </div>
+      </section>
+
+      <section class="visual-overview" aria-label="视觉分类概览">
+        <article class="paper visual-overview-card">
+          <p class="section-label">Photography</p>
+          <h2>摄影</h2>
+          <p>更接近光线、街道、天气与日常观察。它们像是慢慢被看见的瞬间，而不是单纯的图库缩略图。</p>
+        </article>
+        <article class="paper visual-overview-card">
+          <p class="section-label">Drawing</p>
+          <h2>绘画</h2>
+          <p>收纳练习、草图、局部完成的画面，以及还在犹豫中的线条。它们和摄影一起构成更完整的视觉习惯。</p>
+        </article>
+      </section>
+
+      <section class="visual-grid" id="visual-grid" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <script src="js/gallery-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

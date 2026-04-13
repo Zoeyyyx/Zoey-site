@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoey | 写作</title>
+  <meta name="description" content="Zoey 的写作主页，按评论、见闻、阅读组织文章与预览。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="writing">
+  <div class="writing-layout">
+    <aside class="writing-rail">
+      <div class="writing-rail-inner">
+        <a href="index.html" class="writing-identity" aria-label="回到首页">
+          <span class="writing-identity-mark">Z</span>
+          <span class="writing-identity-copy">
+            <strong>Zoey</strong>
+            <em>Writing Home</em>
+          </span>
+        </a>
+
+        <div class="writing-rail-head">
+          <p class="section-label">Writing / Essays / Notes</p>
+          <h1>写作</h1>
+          <p>把评论、见闻与阅读放在同一个入口里。点进来就能直接看到正在写些什么，而不是先面对一层空分类。</p>
+        </div>
+
+        <nav class="writing-category-nav" id="writingCategoryNav" aria-label="写作分类导航"></nav>
+      </div>
+    </aside>
+
+    <div class="writing-stage">
+      <header class="topbar topbar-secondary">
+        <a class="brand" href="index.html" aria-label="回到首页">
+          <span class="brand-mark">Z</span>
+          <span class="brand-text">
+            <strong>Zoey</strong>
+            <em>notes & works</em>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="site-nav" aria-label="主导航"></nav>
+      </header>
+
+      <div class="writing-stage-grid">
+        <main class="writing-feed">
+          <section class="writing-feed-intro">
+            <p class="section-label">Writing Frontpage</p>
+            <h2 id="writingPageTitle">全部</h2>
+            <p class="writing-feed-lead" id="writingPageLead">这里先展示所有写作方向的文章预览，你可以从评论、见闻、阅读切进去继续看。</p>
+          </section>
+
+          <div class="writing-sections" id="writingSections" aria-live="polite"></div>
+        </main>
+
+        <aside class="writing-aside">
+          <section class="writing-panel">
+            <p class="section-label">Search</p>
+            <h3>搜索</h3>
+            <label class="writing-search" for="writingSearchInput">
+              <span class="sr-only">搜索文章</span>
+              <input type="search" id="writingSearchInput" class="writing-search-input" placeholder="搜索标题、摘要、标签">
+            </label>
+          </section>
+
+          <section class="writing-panel">
+            <p class="section-label">Categories</p>
+            <h3>分类</h3>
+            <ul class="writing-meta-list" id="writingStats"></ul>
+          </section>
+
+          <section class="writing-panel">
+            <p class="section-label">Recommended</p>
+            <h3>推荐文章</h3>
+            <div class="writing-side-stack" id="writingRecommended"></div>
+          </section>
+
+          <section class="writing-panel">
+            <p class="section-label">Recent</p>
+            <h3>最近更新</h3>
+            <div class="writing-side-stack" id="writingRecent"></div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/writing-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/writing.js"></script>
+</body>
+</html>

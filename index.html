@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoey | 个人网站</title>
+  <meta name="description" content="Zoey 的个人网站首页，收纳碎碎念、文章、音乐、视觉与工具。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <div class="home-transition" aria-hidden="true">
+    <span class="home-transition-main"></span>
+    <span class="home-transition-topglow"></span>
+    <span class="home-transition-edges"></span>
+  </div>
+  <div class="page-shell">
+    <header class="topbar home-topbar" aria-label="首页主入口">
+      <a class="brand" href="index.html" aria-label="回到首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>notes & works</em>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
+    </header>
+
+    <main class="home-main">
+      <h1 class="sr-only">Zoey 个人网站首页</h1>
+
+      <section class="home-hero" aria-label="首页主视觉">
+        <div class="home-thread" aria-hidden="true">
+          <svg class="home-thread-svg" viewBox="0 0 1200 620" preserveAspectRatio="none">
+            <g class="home-thread-ball">
+              <circle cx="156" cy="540" r="66"></circle>
+              <path d="M96 540c22-24 80-29 116 6"></path>
+              <path d="M90 565c28-20 88-24 128 10"></path>
+              <path d="M108 508c26-14 62-16 92 4"></path>
+              <path d="M118 586c26-10 60-6 92 14"></path>
+              <path d="M126 484c18-10 40-12 58-8c20 4 34 14 42 28"></path>
+              <path d="M120 524c18 8 34 8 52 2c20-6 38-6 58 4"></path>
+            </g>
+            <path
+              class="home-thread-line"
+              d="M220 566
+                 C 280 526, 330 498, 392 496
+                 S 506 530, 584 488
+                 S 708 386, 792 398
+                 S 914 470, 1000 420
+                 S 1090 320, 1156 330"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="home-title-block">
+          <p class="section-label">index / opening</p>
+          <h2 class="home-title" aria-label="Zoey，你在这里做甚？">
+            <span class="home-title-name">Zoey</span>
+            <span class="home-title-question">，你在这里做甚？</span>
+          </h2>
+        </div>
+
+        <div class="home-intro">
+          <p class="home-intro-text">
+            把一部分思绪、一部分影像、一部分声音先放在这里，
+            慢慢整理，慢慢继续。
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoey | 工具</title>
+  <meta name="description" content="Zoey 的工具入口页，收纳练习器与站内小工具。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tools">
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="回到首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>notes & works</em>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
+    </header>
+
+    <main class="subpage-main tool-card-page">
+      <section class="tool-card-grid" aria-label="工具入口">
+        <a class="paper tool-card tool-card-primary" href="doremi.html" aria-label="进入 Doremi 乐理练习工具">
+          <div class="tool-card-head">
+            <p class="section-label">Music Theory Tool</p>
+            <span class="tool-card-state">已接入</span>
+          </div>
+          <h1>Doremi</h1>
+          <p>用于乐理、识谱与听觉练习的小工具，适合随手做一点日常训练。</p>
+        </a>
+
+        <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
+          <div class="tool-card-head">
+            <p class="section-label">Next</p>
+            <span class="tool-card-state tool-card-state-muted">待接入</span>
+          </div>
+          <h2>下一张工具卡</h2>
+          <p>之后可以继续接入新的练习页或小型辅助网页。</p>
+        </article>
+
+        <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
+          <div class="tool-card-head">
+            <p class="section-label">Next</p>
+            <span class="tool-card-state tool-card-state-muted">待接入</span>
+          </div>
+          <h2>还在整理中</h2>
+          <p>先留一个安静的位置，等下一个工具自然长出来。</p>
+        </article>
+
+        <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
+          <div class="tool-card-head">
+            <p class="section-label">Next</p>
+            <span class="tool-card-state tool-card-state-muted">待接入</span>
+          </div>
+          <h2>更多小网页</h2>
+          <p>以后如果还有别的小网页接进站内，这里会继续补上。</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

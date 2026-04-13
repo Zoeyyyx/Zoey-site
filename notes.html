@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoey | 碎碎念</title>
+  <meta name="description" content="Zoey 的碎碎念页面，用来收纳随手记录、灵感笔记与短句片段。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="notes">
+  <div class="page-shell notes-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="回到首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>notes & works</em>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
+    </header>
+
+    <main class="subpage-main notes-page">
+      <section class="sub-hero whiteboard notes-hero">
+        <div class="notes-hero-copy">
+          <p class="section-label">Notes / Fragments / Signals</p>
+          <p class="lead">
+            在这里放一些来不及长成文章的念头。
+          </p>
+        </div>
+
+        <div class="notes-view-switch" role="tablist" aria-label="碎碎念视图切换">
+          <button class="view-toggle is-active" type="button" data-view-target="timeline" aria-pressed="true">
+            时间线视图
+          </button>
+          <button class="view-toggle" type="button" data-view-target="graph" aria-pressed="false">
+            关系图视图
+          </button>
+        </div>
+      </section>
+
+      <section class="notes-panel" data-view-panel="timeline">
+        <div class="notes-panel-head">
+          <p class="section-label">Timeline Archive</p>
+        </div>
+        <div id="notes-timeline" class="notes-timeline" aria-live="polite"></div>
+      </section>
+
+      <section class="notes-panel is-hidden" data-view-panel="graph">
+        <div class="notes-panel-head">
+          <p class="section-label">Graph View</p>
+          <p class="notes-panel-desc">有什么想法，请记录下来吧。</p>
+        </div>
+        <div id="notes-graph" class="notes-graph" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/notes-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
