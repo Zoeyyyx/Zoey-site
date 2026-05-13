@@ -1,0 +1,342 @@
+.subpage-sidebar-left {
+  position: fixed;
+  inset: var(--global-header-height, 94px) auto 0 0;
+  align-self: stretch;
+  display: grid;
+  width: var(--subpage-left-width);
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, rgba(247, 240, 230, 0.96), rgba(243, 235, 224, 0.9));
+  border-right: 1px solid rgba(94, 79, 65, 0.1);
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.sidebar-shell,
+.subpage-sidebar-left .subpage-rail-card {
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  gap: 0;
+  padding: clamp(20px, 2.2vw, 28px) 18px 24px max(18px, var(--subpage-main-pad-x, 20px));
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sidebar-header {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar-kicker,
+.sidebar-description,
+.sidebar-title {
+  margin: 0;
+}
+
+.sidebar-title {
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  line-height: 1.02;
+}
+
+.sidebar-description {
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.sidebar-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar-divider {
+  height: 1px;
+  margin: 18px 0 16px;
+  background: rgba(94, 79, 65, 0.12);
+}
+
+.sidebar-body {
+  display: grid;
+  gap: 0;
+}
+
+.sidebar-section {
+  display: grid;
+  gap: 0;
+}
+
+.sidebar-section + .sidebar-section {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(94, 79, 65, 0.08);
+}
+
+.sidebar-action-group {
+  display: block;
+}
+
+.sidebar-action,
+.subpage-sidebar-left .writing-category-button,
+.subpage-sidebar-left .visual-filter-button,
+.subpage-sidebar-left .view-toggle,
+.subpage-sidebar-left .subpage-side-list > a,
+.subpage-sidebar-left .subpage-side-list > span,
+.subpage-sidebar-left .subpage-side-chip-row > .subpage-side-chip,
+.subpage-sidebar-left .subpage-side-chip-row > a,
+.subpage-sidebar-left .subpage-side-chip-row > button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px 0 30px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+  box-shadow: none;
+  transform: none;
+  position: relative;
+}
+
+.sidebar-action::before,
+.subpage-sidebar-left .writing-category-button::before,
+.subpage-sidebar-left .visual-filter-button::before,
+.subpage-sidebar-left .view-toggle::before,
+.subpage-sidebar-left .subpage-side-list > a::before,
+.subpage-sidebar-left .subpage-side-list > span::before,
+.subpage-sidebar-left .subpage-side-chip-row > .subpage-side-chip::before,
+.subpage-sidebar-left .subpage-side-chip-row > a::before,
+.subpage-sidebar-left .subpage-side-chip-row > button::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(94, 79, 65, 0.32);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition:
+    background-color var(--motion-mid) var(--ease-standard),
+    border-color var(--motion-mid) var(--ease-standard),
+    opacity var(--motion-mid) var(--ease-standard);
+  opacity: 0.72;
+}
+
+.sidebar-action + .sidebar-action,
+.subpage-sidebar-left .writing-category-button + .writing-category-button,
+.subpage-sidebar-left .visual-filter-button + .visual-filter-button,
+.subpage-sidebar-left .view-toggle + .view-toggle,
+.subpage-sidebar-left .subpage-side-list > * + *,
+.subpage-sidebar-left .subpage-side-chip-row > * + * {
+  border-top: 1px solid rgba(94, 79, 65, 0.08);
+}
+
+.sidebar-action strong,
+.subpage-sidebar-left .subpage-side-list strong {
+  margin: 0;
+  font-weight: 500;
+}
+
+.sidebar-action small,
+.subpage-sidebar-left .subpage-side-list small,
+.subpage-sidebar-left .writing-category-button small {
+  color: var(--text-faint);
+  font-size: 0.8rem;
+  margin-left: auto;
+  justify-self: end;
+}
+
+.sidebar-action small {
+  line-height: 1.4;
+}
+
+.subpage-sidebar-left .subpage-side-list,
+.subpage-sidebar-left .subpage-side-chip-row,
+.subpage-sidebar-left .notes-view-switch,
+.subpage-sidebar-left .writing-category-nav,
+.subpage-sidebar-left .visual-filter {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.subpage-sidebar-left .notes-view-switch {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.subpage-sidebar-left .visual-filter {
+  justify-items: stretch;
+}
+
+.subpage-sidebar-left .subpage-side-chip-row {
+  display: block;
+}
+
+.subpage-sidebar-left .writing-category-button:hover,
+.subpage-sidebar-left .visual-filter-button:hover,
+.subpage-sidebar-left .view-toggle:hover,
+.subpage-sidebar-left .subpage-side-list > a:hover {
+  background: rgba(94, 79, 65, 0.05);
+  color: var(--text);
+  box-shadow: none;
+  transform: none;
+}
+
+.subpage-sidebar-left .writing-category-button:hover::before,
+.subpage-sidebar-left .visual-filter-button:hover::before,
+.subpage-sidebar-left .view-toggle:hover::before,
+.subpage-sidebar-left .subpage-side-list > a:hover::before {
+  background: rgba(94, 79, 65, 0.18);
+  border-color: rgba(94, 79, 65, 0.42);
+}
+
+.subpage-sidebar-left .writing-category-button.is-active,
+.subpage-sidebar-left .visual-filter-button.is-active,
+.subpage-sidebar-left .view-toggle.is-active,
+.subpage-sidebar-left .subpage-side-list > .is-active,
+.subpage-sidebar-left .subpage-side-list > [aria-current="page"] {
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: none;
+  transform: none;
+}
+
+.subpage-sidebar-left .writing-category-button.is-active::before,
+.subpage-sidebar-left .visual-filter-button.is-active::before,
+.subpage-sidebar-left .view-toggle.is-active::before,
+.subpage-sidebar-left .subpage-side-list > .is-active::before,
+.subpage-sidebar-left .subpage-side-list > [aria-current="page"]::before {
+  background: rgba(94, 79, 65, 0.22);
+  border-color: rgba(94, 79, 65, 0.54);
+}
+
+body[data-page="notes"] .subpage-sidebar-left {
+  background: linear-gradient(180deg, rgba(27, 24, 22, 0.985), rgba(20, 18, 17, 0.96));
+  border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+body[data-page="notes"] .sidebar-description {
+  color: rgba(232, 222, 212, 0.72);
+}
+
+body[data-page="notes"] .sidebar-divider {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body[data-page="notes"] .sidebar-section + .sidebar-section {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+body[data-page="notes"] .sidebar-action,
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button,
+body[data-page="notes"] .subpage-sidebar-left .visual-filter-button,
+body[data-page="notes"] .subpage-sidebar-left .view-toggle,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > a,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > span,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-chip-row > .subpage-side-chip,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-chip-row > a,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-chip-row > button {
+  color: rgba(232, 222, 212, 0.74);
+}
+
+body[data-page="notes"] .sidebar-action::before,
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button::before,
+body[data-page="notes"] .subpage-sidebar-left .visual-filter-button::before,
+body[data-page="notes"] .subpage-sidebar-left .view-toggle::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > a::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > span::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-chip-row > .subpage-side-chip::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-chip-row > a::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-chip-row > button::before {
+  border-color: rgba(232, 222, 212, 0.32);
+}
+
+body[data-page="notes"] .sidebar-action + .sidebar-action,
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button + .writing-category-button,
+body[data-page="notes"] .subpage-sidebar-left .visual-filter-button + .visual-filter-button,
+body[data-page="notes"] .subpage-sidebar-left .view-toggle + .view-toggle,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > * + *,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-chip-row > * + * {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+body[data-page="notes"] .sidebar-action small,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list small,
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button small {
+  color: rgba(232, 222, 212, 0.52);
+}
+
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button:hover,
+body[data-page="notes"] .subpage-sidebar-left .visual-filter-button:hover,
+body[data-page="notes"] .subpage-sidebar-left .view-toggle:hover,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(250, 245, 238, 0.96);
+}
+
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button:hover::before,
+body[data-page="notes"] .subpage-sidebar-left .visual-filter-button:hover::before,
+body[data-page="notes"] .subpage-sidebar-left .view-toggle:hover::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > a:hover::before {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(250, 245, 238, 0.52);
+}
+
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button.is-active,
+body[data-page="notes"] .subpage-sidebar-left .visual-filter-button.is-active,
+body[data-page="notes"] .subpage-sidebar-left .view-toggle.is-active,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > .is-active,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > [aria-current="page"] {
+  background: transparent;
+  color: rgba(250, 245, 238, 0.96);
+  font-weight: 600;
+  box-shadow: none;
+  transform: none;
+}
+
+body[data-page="notes"] .subpage-sidebar-left .writing-category-button.is-active::before,
+body[data-page="notes"] .subpage-sidebar-left .visual-filter-button.is-active::before,
+body[data-page="notes"] .subpage-sidebar-left .view-toggle.is-active::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > .is-active::before,
+body[data-page="notes"] .subpage-sidebar-left .subpage-side-list > [aria-current="page"]::before {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(250, 245, 238, 0.58);
+}
+
+@media (max-width: 980px) {
+  .subpage-sidebar-left {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-right: 0;
+  }
+
+  .sidebar-shell,
+  .subpage-sidebar-left .subpage-rail-card {
+    padding: 0;
+  }
+
+  .sidebar-divider {
+    margin: 16px 0 12px;
+  }
+
+  .sidebar-section + .sidebar-section {
+    margin-top: 14px;
+    padding-top: 14px;
+  }
+}

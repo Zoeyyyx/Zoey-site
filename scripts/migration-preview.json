@@ -1,0 +1,936 @@
+{
+  "generated_at": "2026-04-23T11:54:31.734Z",
+  "mode": {
+    "import": true,
+    "uploadStorage": true
+  },
+  "sources": {
+    "htmlSources": [
+      {
+        "file": "notes.html",
+        "exists": true
+      },
+      {
+        "file": "writing.html",
+        "exists": true
+      },
+      {
+        "file": "gallery.html",
+        "exists": true
+      },
+      {
+        "file": "music.html",
+        "exists": true
+      }
+    ],
+    "jsSources": {
+      "notes": "js/notes-data.js",
+      "gallery": "js/gallery-data.js",
+      "writing": "js/writing-data.js"
+    },
+    "articleFiles": [
+      "articles/amy-1st-solo-album.html",
+      "articles/northwest-sand-part-1.html"
+    ],
+    "txtFiles": [
+      "README.txt"
+    ],
+    "imageFileCount": 30,
+    "audioFileCount": 0
+  },
+  "counts": {
+    "notes": 72,
+    "posts": 3,
+    "gallery_items": 11,
+    "music_items": 0
+  },
+  "data": {
+    "notes": [
+      {
+        "id": "c6dca05c-c97f-41e3-b539-43e6f9ff55e0",
+        "title": null,
+        "content": "你会在什么时候感到开心呢？我想你也不愿意承认吧，请不要欺骗自己呢。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-10T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "3868511c-95d5-4d10-a139-bcbfaaa246b4",
+        "title": null,
+        "content": "今天经由他人提醒，我意识到我也许不算擅长聊天，至少惯常的聊天模式没有良好的泛化性。但决不能因此放弃向外交流。如果你相信你的人生很有意思，那么就要有足够的信心相信一定存在一部分“他人”也很有意思。而与对的人进行交流可以让有意思的部分更有意义，因而切不可轻易放弃，至少不能磨灭希望。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-10T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "8e978159-f1b2-4991-8fde-3ed03e40e2b8",
+        "title": null,
+        "content": "“自嬷”这个网络用语也许有更深层的解释。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-10T15:57:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "3cc814a3-e750-4ad6-ad6e-bbaee08f6716",
+        "title": null,
+        "content": "我以为的真实想法事实上也有伪装性，意识到这件事就算一点进步。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-10T15:56:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "f4d88800-bb69-4a00-aafa-743fdbbacfcf",
+        "title": null,
+        "content": "要许许多多的幻想时刻啊，就是要在无限的幻想中满足。有些事情，幻想终止的时刻就是完成的时刻啊。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-09T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "740f8ac2-fe7b-4890-8c97-7dd5cd375ee0",
+        "title": null,
+        "content": "评价他人的同时也给自己戴上了一副不可轻易摘下的有色眼镜。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-05T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "e7bfca8c-e16c-455b-847c-0150643ae90d",
+        "title": null,
+        "content": "追求平等，特别是在两个人的交流（不限关系类型）中追求平等几乎是我的一种偏执。几乎所有和特定他人的非任务性交流的细节都会已一种特定的方式存储起来，综合出一种重量，既要追求总体重量相当，又会在某些局部为了一些乐趣做一种精准打击式的配平。\n\n但有时候，所谓的配平仅仅存在于自己的视角。这样的客观存在的事实，以及无法辩解的困境，带给当下这个不成熟的我一种难以忍受的痛苦。以上文字是未被消化情绪的外溢。\n\n你要如何接受他人内心的自己不符合你认为的真实，或者你认为的预期。你是不是还不能接受呢？也许这是对“真实”的一种洁癖。谈不上健康，也谈不上有心理疾病。但可以确认的是，有些时候即使你再努力，他人如何想终究是由他人决定的。人生苦短，不要为这类事情思虑过多。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-03T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "5905185f-8f49-4c2a-9bd6-20b90c4f7d17",
+        "title": null,
+        "content": "夏虫不可语冰。关于谁是“夏虫”——谁都可以是。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-04-01T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "2b46b6d0-f73d-44e5-b007-a4ef02cbe9a9",
+        "title": null,
+        "content": "许是今日下雨，心情总不算明媚。当我用旁观者的眼光投向身边一位又一位同学，好像每个人都被一种焦虑笼罩着，几乎没有让我眼前一亮的时刻。这个世界或者说我们这一代这个群体所面对的世界就像这个天气一样，不会有被冰雹砸死的风险，但就像这没有太阳的潮湿日子，总归会有因没撑好伞而被雨淋湿的担忧。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-31T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "2ff02b09-a926-48b0-a71d-48ebbc90f315",
+        "title": null,
+        "content": "如果你在某些场景或者某类人群面前感到放松，有需要被克制的优越感，那么你一定会在其他场景下感到拘谨和局促。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-30T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "1a30fbb2-426d-4435-aaa2-cc9182c9e815",
+        "title": null,
+        "content": "第一次感受到人与人的相遇就像浮萍，可能顺着水流走一段，也可能触着一下就碰开了。怎么会有这么贴切的比喻呢。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-30T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "5ddbe3f7-7e02-498f-a7f6-fd2f32f9d6af",
+        "title": null,
+        "content": "身份认同也许是人与人社交安全感的一大重要来源。而摆脱身份上的标签，回归于立体的人本身也许是社会人的一大课题。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-30T15:57:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "899d9b89-83e7-4366-8cfb-db9a5c3ea2bb",
+        "title": null,
+        "content": "做一些无聊的任务性事情让我感到生理性厌恶。无法施展我的创造力，也不能让我的大脑高速运转，无聊至极，也厌恶至极。无名的怒火在心中燃烧。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-28T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "33a32bb1-125a-4dcc-be77-ebd7d17518e0",
+        "title": null,
+        "content": "最近在看的书的文风充满着心理上精神上的张力，有一种混乱的、挣扎的、粗粝的美感。“就是要一泻千里，就是要难以捉摸，就是要原形毕露，就是要不顾一切，就是要歇斯底里”的感觉给人许许多多的宽慰。啊，可以充满希望，也可以绝望，当然也可以绝处逢生再彻底堕入黑暗。\n\n世界上没有哪一种心理是不能存在的，也没有什么状态是人所不能处于的。这个世界什么都可以，这个心理世界也什么都可以。朋友啊，你的问题也许根本就不是问题，因为这个世界就是由问题组成的。如果没有问题，这个世界就不该叫世界，就该叫宗教里所谓的“天堂”了。\n\n为何对此有感而发？近段时间，常常对自己状态的割裂而感到困扰甚至不安。且不谈和他人相处的状态与独处时状态的割裂，单是自己一个人独处时，不同时刻的状态都有天壤之别。而对这种反差的不适感甚至超越了事实本身。这种观察的视角反而成了痛苦的源泉。当然，痛苦本身就是生活的一大重要的乐趣来源。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-27T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "4be02fa5-317e-4cff-8948-40ecf6662159",
+        "title": null,
+        "content": "今天和别人提起自己对信息推理的癖好，在今天之前我并不认为这是一件恐怖的事情，但是今天才从他人口中真切地意识到：事实上这种行为是极其不礼貌的。但同时我对自己竟然有一个怪癖而感到一丝安慰——我终于不是一个庸庸碌碌的完全正常的人，这很有趣。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-27T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "b85917cb-c3b8-4908-af49-73c0ae4efc15",
+        "title": null,
+        "content": "总觉得自己的身体里存在一种被束缚着的巨大能量，这种存在在我心中的未被证实的能量在很多时候给予我前进的动力。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-25T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "947ed652-7ca5-48b5-85ee-e040c59d5c10",
+        "title": null,
+        "content": "在某些时刻，面对他人时某些内在的部分就会开始蠢蠢欲动、呼之欲出，在这样的时刻，无论过往你认为自己有多么的矜持或者沉稳，理智都会落于下风。这样的时刻需要被当场察觉，而不是在反刍时浮现。做一个“统一”的人也许算一种无谓的追求，但总比没有的好。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-25T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "da9b7ba9-ee64-4a56-a9b2-c12111d4b5e0",
+        "title": null,
+        "content": "常常要感叹自己想象力实在太匮乏，又或者说对事件以及对个人状态的预知太负面。我以为在做那件事的时候我会很痛苦，至少不快乐。但当我在做这件事的时候，思维自然地流淌了起来，毫不费力，和我先前预想的完全不一样。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-19T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "32aa0470-3020-478f-9a71-28adf2d57883",
+        "title": null,
+        "content": "今日突然得知有一张奖状送至楼下。虽然我知道奖状本身不会对人对事有实质性的改变，但仅仅作为一个惊喜来说，它的确很合格，毕竟到楼下了我才知道它的存在。这种感觉就像世界突然跑过来，亲了你一口，然后又跑走了。听上去很奇怪也可能没什么用，但至少让我高兴了一下。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-19T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "b5e8fa06-5fe6-434e-b3f3-15003d7a9731",
+        "title": null,
+        "content": "心就像一条荡在水上的小船，光荡着就是幸福本身了。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-18T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "60c043c8-3076-49f9-9daa-1d3d7db230a3",
+        "title": null,
+        "content": "在什么时候，能感受到自己的存在？很开心的时候，很难过的时候，自在的时候？还是不自在的时候？在感到这个世界有点陌生、有点新鲜还有点有趣的时候，我感到我的存在。这是一种混沌的感受，仅仅知道存在，但没有明确的定义。这样的感受值得记录。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-15T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "f1e246dc-b853-4cf6-87f8-fc2def58e12b",
+        "title": null,
+        "content": "这段时间大四的同学都在拍毕业照，忽而想到自己离毕业也不远了。进而想着，到时候毕业时会如何总结自己的本科阶段呢？现实不同于想象与回忆，它很琐碎，那些微小的色块密密地排列在一块，一眼望过去竟没有一种突出的色调。日子在我心里是慢慢流走的。在无法命名的日子里，我知道，也有力量在慢慢积攒。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-12T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "2622cc8e-1edd-4ec7-a545-372df8c3e314",
+        "title": null,
+        "content": "一方面为自己葆有对平静的向往而感到庆幸，另一方面深深地意识到这种刻意在，一片干扰的平静区域。当然，前提是，这片内心的湖水要有足够的深度。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-03-09T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "855d992e-cde8-4a8c-9265-c0a260312c16",
+        "title": null,
+        "content": "今日校园论坛，无意发现由帖主的个人网站顺藤摸瓜发现了许多很有意思的网站。震撼之余，不免感叹人的存在注定伴随着表达，而有什么可表达，如何表达，表达出的又是什么，人与人之间天差地别。今日之见识即已是收获。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-30T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "73f2c5be-5c69-45d2-bdf5-845a3ae21259",
+        "title": null,
+        "content": "愈发觉得，生活本身就是一场游戏。这里我无意解构生活，游戏只是一个代指，也可以说是生活本身就是意义的锚点或者生活本身即是意义，诸如此类。许多时候，我们都在寻找一种东西，存放精力与时间。它可以是一件事，也可以是一个现实或虚拟的对象，可以是狭义的游戏，可以是现实的政治。\n\n它可以是任何东西，但在潜意识中唯独在路上的状态是不被允许的。当时间自由时，受到这种意识的裹挟，人反而不自由。多么悲哀。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-28T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "d028d68a-36c5-41af-a794-e2e04b50020d",
+        "title": null,
+        "content": "今天想到一个描述最近生活状态的形象描述。“我”很擅长一直待在一个“小胶囊”里，并且为此感到自在和满足。但是生活总是需要我从一个“小胶囊”切换到另一个“小胶囊”，而问题也出现在切换的部分。\n\n切换的路途可分为三个部分：【出发】时喜悦急切；但发现切换不可一蹴而就时，在【过程】中急切变成了拖延；即将【到达】下一胶囊时，心情也极度兴奋。其中让人苦恼的无疑是混沌的【过程】，不仅在客观层面占据了我的时间，在主观上也无谓地消耗了我大量能量。\n\n我只知道这样的情况的确在我身上发生了。“胶囊”内意识秩序流淌带来的安全感和踏实感，和切换【过程】中的自我意识的混乱乃至丧失——二者的状态是极度割裂的。这种意识层面上的巨大割裂是痛苦的第二层来源。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-26T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "77f4c6f6-83f2-48e8-a011-a00386fff38a",
+        "title": null,
+        "content": "有时候也会觉得他人的生活很好，但最后都会落回一个想法：我的生活才是我的来源，我所思考的和我所经历的才是真正构成我的，这才是需要自己主动关照的部分。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-22T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "26479a59-ca8e-4af8-ac1b-990a8b7e5a21",
+        "title": null,
+        "content": "对于自己的认识还是太少了，我以为我的前额叶可以实现对自己的完全管控。但事实是，我对自己的认知还是不完全。有一些时刻就是无法完全理智，就是要发疯，就是要每时每刻在说话，就算是现编的胡话，就是要蹦蹦跳跳，就是会控制不住自己想要笑，然后把地铁坐过站。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-10T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "2e8ef5c0-7c43-48f0-95ea-97273915869d",
+        "title": null,
+        "content": "平淡无奇的日子，平淡到让人在心中感叹。不过，这种状态实为应然。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-06T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "bcb4f1e5-f9e7-4011-a832-4b10b9888def",
+        "title": null,
+        "content": "对于真正心爱之物，不要加以评价。这对于对象是一种污染，因为往后的任何一次欣赏都将不再纯粹。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-01T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "73ec5df0-f730-4b6d-b15c-4a5fc633a95f",
+        "title": null,
+        "content": "我迫切地想从生理结构的角度搞清楚：为什么人对于长期同质的外部刺激会逐渐麻木，而后昏昏欲睡。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-01T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "b74cb451-b8a2-4710-9830-2dba2b5ae96d",
+        "title": null,
+        "content": "听歌有一个很有趣的部分在于在不知情的情况下再次听到之前点过红心的歌曲，还是有一种点红心冲动。很妙的时刻。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2026-01-01T15:57:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "7c72f549-2f2f-4e97-b5bb-c5a7a9d8dec4",
+        "title": null,
+        "content": "尽管我知道人在大脑疲惫的时候，思考能力会显著削弱，许多想法不值得记录。此刻正处于极度疲劳的状态，以至于我无法进行其他活动，但我还是想说：我好累呀！在这样一个无时无刻没有量化的环境，我好像也无法摒弃那个被塑造的有色眼镜。如何自处？自然而处。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-31T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "2e1cae59-7ad5-4873-a57f-2f9cb3a97b6b",
+        "title": null,
+        "content": "要以一种绝对掌控的姿态面对未知。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-30T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "87f41a63-5d4d-4c77-852e-6eba599a7694",
+        "title": null,
+        "content": "突然有个小小的感慨想鼓励一下自己：专注自己回到当下的速度越来越快了，算是一个很大的进步。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-27T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "6d779ee5-99fa-4362-ac45-21b18907fca4",
+        "title": null,
+        "content": "方才不小心看到高中同学的自媒体账号，看到ta丰富的经历，一方面不由得心生敬佩，另一方面看到熟悉的文风不免感怀，当然不免联想到自身。似乎他人一直在开拓自己能力的边界，做了许许多多的事情，而我似乎在舒适圈待着，就这样晃过了这几年。你说是能力问题吗？好像不是，我想更准确的词是“心气”。\n\n 同样的选择若是我来选，答案一定大不相同。之前哥哥和我说，他什么都不担心，唯一担心的是我从来没有受过巨大的挫折。都说凤凰涅槃，我从未“浴火”，似乎就没有一个契机让我脱胎换骨而“重生”。这事情不能强求，何况真遇上了，能否把握住全然要靠自己。每个人的境况都不相同，过往的人生亦不能改变。\n\n 我依旧相信人生是一条长长的路，命运早已被写好吗？我不认为。你所做的每一件事，你以后的境遇是由每一个当下决定的，而这个当下可能毫无疑问，可能瞬息万变，遇到了便遇到了。唯一久久萦绕心头的问题是“我到底想要怎样的人生？”",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-27T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "fb6e9582-4903-4ce8-a519-456a3ea5fd7a",
+        "title": null,
+        "content": "方才上课，大概在自己复习，没有完全认真听老师讲，老师忽然提了一个问题，点了两个同学，而后我突然想到了答案，突然很想说话，就在这时老师看着名单就叫了我，颇神奇的经历。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-26T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "d58aa013-27a1-45af-8913-a857052367d8",
+        "title": null,
+        "content": "我很清楚此刻的我还不算一个完整独立的个体。很多时候，我都以一种很模糊、不自知的姿态生活。这种模糊的深层状态与每天所需处理事情的具体性形成一种强烈的对比。很多时候我之所以感到痛苦，就是因为我掉入了两者间的巨大裂隙中。二者间的对比越剧烈，陷入痛苦的概率就越高。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-17T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "705ae857-2d70-468c-b595-c149f7aaec95",
+        "title": null,
+        "content": "能喝一口拿铁，听一点pop，学一点东西的日子还是很幸福的。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-15T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "be958c69-025b-4f0f-8d4d-4972fafa3f76",
+        "title": null,
+        "content": "若是使用笔记本工作，如果音乐来源是手机，会觉得一部分思绪随着耳机线分流走了。只有耳机线插在笔记本上才会觉得思绪是一体的。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-12T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "5c4feb8c-5e6d-4214-831f-f7dd337317b5",
+        "title": null,
+        "content": "喜欢一种有节奏的、循序渐进的学习状态。按照计划的稳定步进给人幸福的感受。这种幸福的基调是完全的投入带来的平静感。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-11T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "8d7dd7f2-5bd4-4dad-963c-1f91e23aa738",
+        "title": null,
+        "content": "己，让不风邪气带着跑，另一方面是又要把自己狭隘的想法强加于别人之上，好像事情就只存在一种正确的处理方式，为什么不能多一些包容和谅解呢？",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-09T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "35e12be7-39fc-4655-8b4f-85fc485cc18d",
+        "title": null,
+        "content": "网络上的人难道在现实中不是一个完整的人吗？为什么有如此多人都带着许多的考量。在这种事情上，我还是很喜欢看一些人在理性的基础上七嘴八舌的讨论。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-09T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "e7443e53-97bb-4244-be59-6bdeeee1a8eb",
+        "title": null,
+        "content": "你知道吧，有些时候就是会不可避免地陷入一些痛苦的情绪。虽然常常有理智在一影开解，但情绪这个东西，它能到智不东西，然后很不要指望了。对于情绪，我所能给的只有支持。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-08T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "dad2ff6d-807b-4580-8de9-58af574b69d2",
+        "title": null,
+        "content": "冷，绪价值。大多数时候我都是不自在的状态。但可能也不是我的问题，可能和逆风盘的整体情绪也有关。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-06T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "ca7130a7-2d01-4ea4-89f6-cf82a8197065",
+        "title": null,
+        "content": "当身处在一个挑高十的空间时，累到靠着椅背仰头时，我会不由自主地想到这是在一个十几米的深水池底端，而我所注视的是水面。这种想象给人一种宁静。也许有一天这会变成现实。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-05T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "fcefacf8-48d9-42c4-bede-c00ebf92e997",
+        "title": null,
+        "content": "大脑控制行为来照顾自己，想想也是一件很神奇的事。过去我总是太自大了，现在越来越意识到，所谓的思想意识都是建立在生物体的物质基础上的。如果一个人觉得自己受思想所困，首先应该关注自己的身体。而我意识到我最近很缺觉。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-04T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "9df2b645-397a-487e-a0e6-3883ebd4bd11",
+        "title": null,
+        "content": "我想，强制自己从客观上无视外界的信息，来避免一种潜意识里迎合外界的情况的做法是低级的。真正锻炼自己的做法是，我了解，但仅作为一种了解。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-02T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "527ab5df-c989-4961-b103-d88c296cae89",
+        "title": null,
+        "content": "我真的觉得自己很有当心理咨询师的天分。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-02T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "fa6ef69a-e4c9-4401-9cb4-7cd37b74c89f",
+        "title": null,
+        "content": "听电子音乐就像冲热水澡，一种纯粹直接的能量灌注。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-02T15:57:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "146d95b3-7e74-4ec6-a611-73d24ceb5332",
+        "title": null,
+        "content": "我想提出一个观点：人应当活在皮肤表面，不要太靠外，也不要太靠里。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-02T15:56:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "dc31d262-78bc-42b5-b0f1-28a3fee59e4b",
+        "title": null,
+        "content": "不可否认，我还是那个很容易产生胜负欲的我。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-12-02T15:55:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "4ee19c38-0bbf-40e2-832f-402dd5f62789",
+        "title": null,
+        "content": "在我仅有人生中，我总是能把人分类，比如遇到A会让我联想到很久之前认识的B。总的来说分类标准是给人的感觉，但是在细分的部分，比如外貌特征、语言声线、性格、社交生态位、爱好等等都存在一定的相似性。不知道是否有人研究这个问题，还是挺有趣的。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-30T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "87297fc7-fac9-49af-894a-c6319bc4f4ff",
+        "title": null,
+        "content": "我要在一个知识自己都会打盹的夜晚学信号处理，把我之前失去的都夺回来！\n\n可是，如果情绪装得太满了，知识也变得难摄入了。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-30T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "79c31325-698b-483c-b1fa-2259ba8b6cca",
+        "title": null,
+        "content": "我突然意识到，当我无意识地观看社交平台时，驱使这一行为的可能不是对信息的渴望，而是一种想要与世界紧密连接的迫切需求。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-30T15:56:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "ddb31ad1-fda0-4ac5-b6de-405b6230d950",
+        "title": null,
+        "content": "当思维在未知的领域遨游，所有在想象中生成的恐惧凝聚成思维网络中可知的节点，这何尝不是一种美妙的体验？",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-30T15:55:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "58cc3f80-a33b-4028-b284-2bf895b3ae9b",
+        "title": null,
+        "content": "我好像总是能敏锐地察觉到哪些人会带给我压力。他们身上那种绷紧到皮肤的紧张感和用力感，让我从潜意识里想要避而远之。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-28T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "080e7912-5e30-4661-b5fd-6c43e5164576",
+        "title": null,
+        "content": "昨天和大家出去玩，晚上躺在床上感到好幸福，好像自己爱上了每一个人。我都会想自己怎么会如此轻易地喜欢每一个人。这种喜欢来自于我“看到了”每个人不同的性格，不同的语言习惯，不同的兴奋点，同一时刻下不同的反应和状态……可能我不是爱上了他们，而是爱上了这些“被看到的”细节。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-23T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "66c189b6-5818-4f2e-820f-c4c20b5e1868",
+        "title": null,
+        "content": "这样的境况，在过去的集体生活中也发生过，同样的，我也喜欢每一个人。这种感觉就像一条鱼在舒畅的大海里自由游动，给人一种幸福的体验。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-23T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "6ad8eed1-b433-431e-acaa-e20affcf9664",
+        "title": null,
+        "content": "我会在哪里暴露最无助最脆弱的我，也许只有在这个无人的小角落吧，因为我知道很久以后的我总会会看到这些的。很长时间来的主观上的独处和内心上的封闭，让我维持了一个高能量的行动外在和一个随时在崩溃边缘的内心。\n\n 不过还是有一点要注意，如果出现我对我自己说话的情况，这可能不是一个好兆头。我现在在打字，我待会要睡觉。晚安。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-19T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "15e6676f-1c5e-44a6-8504-afe1a6f7b574",
+        "title": null,
+        "content": "我常常会想起，面对自己的情绪，首先要考虑得是客观层面的因素，包括睡眠情况，激素水平，肌骨舒适度，是否在夜晚，是否感到疲惫……只有考察完这些因素，才能在心里对自己做一个小小的评估说：“哦，你今天有点脆弱。”很幸运，当我对照以上后发现：现在是晚上，且我有点困了。那很好，去睡觉吧。晚安。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-19T15:57:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "ec9a1185-3fb4-4329-8d51-770b8d91a9ce",
+        "title": null,
+        "content": "在某个时刻，突然进行的自我表露，在半途中被觉察，然后被一个所谓的冷酷无情的我批判驳回，考虑他人的想法，把自己客体化，迅速变成那个对他人完美无害的样子。我曾经说过，流泪不是因为伤心，可能只是因为情绪在某个无法自持的极点。而此刻，我刚刚翻越那个极点，回到低谷。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-19T15:56:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "379f9228-e4ec-43ef-8101-49f448fb01c1",
+        "title": null,
+        "content": "还是认为人与人需要一些联结。今天和小朋友待在一起，有一些或宣之于口或无声流露的依赖和善意，让我产生一种久违的因他人而生的幸福感。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-19T15:55:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "9f7f6768-be62-4db9-b46b-183fe20160c6",
+        "title": null,
+        "content": "总有一些时刻，一回想便会感到窘迫。我想也许这正是我的某个创伤之处。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-18T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "526fbbb8-61de-421d-a8d0-a74f7eaabf35",
+        "title": null,
+        "content": "时空的交错让人着迷，于是我在这里留下痕迹。今天，我的内心有点波澜。那颗小石子是过去的我投下的，落在了今晚的湖面。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-15T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "c9d9a2d7-b6a3-4589-8006-e802bddd4a11",
+        "title": null,
+        "content": "冬日的晴天是白色的。越来越小的太阳高度角，让阳光从革质叶片的边缘，从自行车的车把，从电瓶车的后视镜，从柏油的路面，从一切能反光的小角落，反射进我的眼睛，让我感到凉凉的空气里散漫着一些冬天独有的白色滤镜。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-13T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "3cc00e3d-0c9e-4220-9d48-ee17ea46da3a",
+        "title": null,
+        "content": "如果人生是一道难题，那我常常在努力理解它的过程中，使用一种名为“迭代”的方法。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-13T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "840222df-e72d-4fc0-a3ca-6df163f18bd6",
+        "title": null,
+        "content": "我觉得有时候我感到很难受，可能是因为我的精力没有用完，但是也找不到地方安放。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-10T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "a4ee5921-cba4-4609-9868-537707f3e480",
+        "title": null,
+        "content": "有时候分不清自己是太懒还是太挑剔。如果内容不够优质，就不太愿意摄取。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-10T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "b94c886a-54d3-4b0f-9e00-1f905429b9b1",
+        "title": null,
+        "content": "听歌方式是对内心境况的一种反应。有条理的探索模式、随机的乱听模式、对推送逆来顺受模式、只听得下旧歌模式……心理能量值依次降低。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-09T15:59:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "307cb647-b3a5-48ce-a572-22f5c08138d8",
+        "title": null,
+        "content": "我不太允许心里放太多的厌恶，干脆说出来好了。从心底里厌烦那些在糟糕的关系里，动用所谓的智力进行博弈的行为。很无聊，真的，人生苦短，不该把精力放在这些事情上的。可能旁观者清吧，不过能做的只有引以为戒。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-09T15:58:00.000Z",
+        "is_published": true,
+        "order_index": null
+      },
+      {
+        "id": "80425c2c-130d-4d89-af25-6aa05495e5b1",
+        "title": null,
+        "content": "对不起了，以后想在这发牢骚。",
+        "tags": [],
+        "mood": null,
+        "publish_date": "2025-11-09T15:57:00.000Z",
+        "is_published": true,
+        "order_index": null
+      }
+    ],
+    "posts": [
+      {
+        "id": "a42795a7-9e14-40ba-9f7e-7b2c5b0135a2",
+        "slug": "amy-1st-solo-album",
+        "title": "关于 𝐀𝐦𝐲'𝐬 1𝐬𝐭. 𝐒𝐨𝐥𝐨 𝐀𝐥𝐛𝐮𝐦",
+        "summary": "从专辑的自我书写出发，逐首谈《逆流》《我爱我》《迷雾》等作品的词曲、编排与声线，也谈这张专辑如何把“我”作为叙事核心重新建立起来。",
+        "category": "评论",
+        "cover_image_url": "/images/articles/amy-solo-album-cover.jpg",
+        "content_html": "<p>考完材力，终于可以稳当地听一听这张专辑了。希望可以尽量不带滤镜地写下我的感受。虽然我也会怀疑我是不是还不具有主观评判他人作品的能力，毕竟每个人的作品都是自己心尖的宝贝，虽然我也会想到她所说的“这是一份礼物”，但这张专辑从我自身的心理出发，实在和别的专辑太不一样了，所以我还是想尽可能客观写点东西。我会先写背景，再写音乐本身。</p>\n\n        <section class=\"article-section\">\n          <h2>1. <span class=\"article-en\">Intro: Open Market 19</span></h2>\n          <p>实话实说，有 intro 就已经高出我的预期了。不过，按照陈昊宇有时会有点老派的性格，这也算意料之中。我能想到这张专辑会跟她的过往经历有千丝万缕的联系，但真的听到 intro 有采样 20 年录的人声，还是会有一些小小的感慨。用这个作为导入，同时，歌名也不加任何的修饰，不必再看简介，就可以感受到这张专辑有不避讳过往，破茧而重生的底色。</p>\n          <p>Intro 采用经典的弦乐四重奏。水波打开专辑的听觉空间，渐强的、保留了呼吸声的人声哼鸣被包裹而至。而后是宿命感的小提琴和弦乐组，原本稍显幽暗和混沌的空间顿时变得明亮开阔。水滴声踩着鼓点，增添了力量感，让听众紧紧跟着节奏进入这张专辑。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>2. 逆流</h2>\n          <p>这首歌的编曲和制作人是老熟人段炼。此前在陈昊宇参演《灿烂的风和海》中，他几乎全包了整部剧集的 OST 制作，其中也包括陈昊宇之前发行的几首单曲。熟人制作，加上卸掉了 OST 的镣铐，感觉编曲上比之前剧里的几首歌好。《逆流》也承接了 intro 里的水元素。</p>\n          <p>人声上，主歌大部分是中音。之前印象里，她很少有能展现中音区声线的歌。相比偏高音的声线，其实我更喜欢她中音部分的质感。虽然我不懂唱歌，但还是能感觉到有些音偏紧，也可能是声带闭合得太好了，此处保留意见。不过这一点也要考虑到整张专辑制作时间很紧张，我估计人声录制会更加紧张。说实话，她的低音区还是得要再多打磨。</p>\n          <p>曲子上，有些时候会让我幻视一些独立女歌手的风格。编曲最后一小段有种人声淹没于声墙的感觉，有点“逆流”的题。最后一句伴奏骤停，声潮落下，人声上的清晰也呼应歌词中的“看得清”。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>3. 我爱我</h2>\n          <p>这首歌应该是整张专辑里色彩最明快的一首。我想在先行曲的选择中，它的优势大概就是名字很直接，能起到一个先行旗帜的作用，传达这首歌关于“我”的基调。但当整张专辑释出后，由于喜新厌旧的原因，这首歌反而会被忽视。</p>\n          <p>节奏上，四三拍的曲子自带一种轻盈的前进感。前奏的感觉让我想起《<span class=\"article-en\">Try Everything</span>》，不过这单纯是一种感觉。相比副歌部分，我还是更偏爱主歌部分的词曲和演绎。之前常常会看到关于陈昊宇咬字问题的评论，但这次我真的很喜欢她在主歌部分的咬字处理，我评价为“德芙的感觉”。不过，有些音可能因为喉位太靠后，音头不是很饱满，这一点还是会有点影响听感。</p>\n          <p>关于副歌部分，我初听就觉得旋律上太单调。虽然曲子有时需要动机重复，但这里的音阶走向几乎一样，总之让我感觉怪怪的，也可能是我不懂。加上词也写得过于直白，当然这也可以称为“直抒胸臆”，总之词曲上都让人感觉很勉强，这也导致我对这张专辑的预期一开始是小作坊作品。此处我要感叹，陈昊宇你是会预期管理的。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>4. <span class=\"article-en\">Flavia</span></h2>\n          <p>这首歌的词曲制作都是之前合作过单曲《慢镜头》的杨格。虽然我不了解杨格，但是这个弦乐的编写，也能感觉到他对这种风格编曲的偏爱。<span class=\"article-en\">Flavia</span> 这个名字，虽然我还没找到确凿的理由，但我发现它的发音还挺像 <span class=\"article-en\">flower</span> 的，和“生命中 修剪的分岔 你总害怕被割伤”这句词，以及专辑 A 封面的“花”的意象，有种隐隐的呼应之感。</p>\n          <p>“<span class=\"article-en\">Flavia</span>”开头的声线，我承认，的确有击中我。一首恬静的小歌，简单的词曲，搭着简洁的吉他和弦乐伴奏，以及女声温柔的演绎，正是专辑介绍中所写的“写给陌生女孩，也是写给自己的信”。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>5. 窗外</h2>\n          <p>终于到了陈昊宇自己写词的歌。当然，这也是专辑中第二首由陈建骐担任制作人的歌。之前陈昊宇也有展现过她在作词方面的能力，相比以往作品，显然这次的词曲更加适配。总体上来说，这是一篇充满画面感的词，毕竟歌名就是窗外。窗外是什么呢？“暴雨”“雷声”“月亮”“雨”“枯叶”，一个不安宁的雨夜，此处宜出一道阅读理解。</p>\n          <p>而被“淹没的”视线逐渐转向窗内。从“暴雨锁住了窗 淹没视线 抹脏你的脸 混乱不堪”到“雷声撕开月亮 照破了窗 扯裂我的疤 无法隐藏”。从窗外到窗内，用同构的句式，暗示着后来心态将由向外索求无果，变为向内寻找答案，“疼痛 总会平静”。</p>\n          <p>我最喜欢的一句是“枯叶 一夜落尽 一切 销声匿迹”以及后面重复的段落，词曲结合得浑然天成，有丝滑畅快之感。我认为这首歌的“歌眼”是最后一句“你再也不能离我而去”。我的理解是，情伤的疗愈实际上是重新拥有主体性的过程。“你再也不能离我而去”，宣判应该由我给出。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>6. 吃掉的幸福</h2>\n          <p>有趣的歌名，喜欢啊。又是一首陈建骐担任制作人的歌。据今晚陈昊宇本人透露，这首歌的昵称是“小吃掉”，也是她目前最喜爱的一首歌。好吧，我将单方面暂时把这首歌的喜爱度上调一点。</p>\n          <p>词曲上，没有太多的弯弯绕绕，总共就 179 个字，简单直接，重章叠句，但很畅快，符合我对独立摇滚风格的刻板印象。吃掉，通通吃掉，过往所有的情感坍缩回到“吃”这个最符合生命原始本能的动词中，释怀的、直白的、有宣泄感的。间奏的吟唱，衔接上“还你……”的编曲，所有情绪都溶解在很爽的鼓点和电吉他声浪里。</p>\n          <p>写到这里，突然想起陈昊宇大学时组过摇滚乐队这件事。哦，这首歌陈昊宇今天也提到了，正是她大学时友人写的。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>7. 无人应答</h2>\n          <p>第二首，也是专辑里唯二由陈昊宇本人作词的歌，同时由段炼负责编曲和制作。《无人应答》这个歌名，实在很难不让人想到田馥甄的《无人知晓》。虽然前者讲的是个人与整个世界的对话，而后者则更侧重于两个人之间的情感纠葛。</p>\n          <p>关于这首歌的词，我总觉得它应该不是最近写的，很有可能是 20 年左右的遗珠，因为很符合她当年的心境。充满对话感的词，搭配上演员陈昊宇驾轻就熟的诉说感演绎，每一句都唱进心里。最戳我的，也是听到后会让人顿住呼吸的那句，是“我不信他们给的答案”，莫名地很感动。它让人相信，在无奈无力之下，仍然会有种“虽千万人吾往矣”的决绝。这是一首能唱进我心里的歌。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>8. 忘了出现</h2>\n          <p>开玩笑，如果这张专辑最先要忘掉一首歌，我会忘了这首《忘了出现》。如果我的感觉没错，这是一首传说中的芭乐情歌。我的评价是，很适合当 OST。希望它是耐听的。中间有一段混音没有特别好，感觉人声被鼓声模糊掉了，不过也可能是特意的设计。我什么都不懂。</p>\n          <p>我认为这首歌在整张专辑中起到的是 <span class=\"article-en\">build-up</span> 和 <span class=\"article-en\">drop</span> 之间那个 <span class=\"article-en\">pre-drop</span> 的作用。因为下一首歌就是：迷雾。让我们热烈欢迎迷雾登场。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>9. 迷雾</h2>\n          <p>整张专辑中最特别的一首歌。写在前面：标准的 120 BPM，这么电子舞曲的一首歌，陈昊宇你真的不考虑在一个月内速学一下舞，然后在巡演的时候大跳特跳惊艳全场吗？虽然歌曲本身想传达的信息挺深刻的，但这是唯一一首我不想讨论歌曲内容的歌，因为这首歌里的声线和编曲太爽了。</p>\n          <p>陈昊宇在这首歌中化身有点疯批、充满 power 的女战士，声线出人意料地适配这样的 feel。大量低频的鼓点，让我想起她之前唱跳过的《煽风点火》，大概是同一种风格。</p>\n          <p>整首曲子服务于主题，信息时代的“电子迷雾”，运用了大量机械感的合成音效。开头的“滴滴”电子提示音、稳定低频的鼓点、大量失真效果、一些起到衔接的故障音、像怪物一样的声音，以及很多捏得很新奇的音色，都很过瘾。对人声的处理，特别是对陈昊宇人声的效果器处理让我很惊喜。一些高频削弱、空间感和声混音和金属感的处理，让最后那句 <strong class=\"article-en\">THIS IS LIFE.</strong> 变得尤其爽。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>10. 克莱因蓝的独白</h2>\n          <p>一首歌名上写着“我很有逼格”的歌。难道我爱我的尽头是自恋吗？这首歌实在是好自恋，以至于有种变态感。但，我喜欢。“去等一个相似的灵魂”，是一种极致的理想主义。</p>\n          <p>我最最喜欢的一段演绎是“如果我的颜色太真 真到难以般配 就让我安静地 独善其身”，这一段的断句和节奏像是掉帧的片段，有种呼吸不了的快感。最后，据唯一人脉陈昊宇透露，outro 是“精心”加的。好。</p>\n        </section>\n\n        <section class=\"article-section article-section-end\">\n          <h2>尾声</h2>\n          <p>这的确是一张“我”专辑，不过话说回来，又有什么叙事会逃不掉“我”这个概念吗？只不过这张专辑，很强调“我”的本位感。整体上，陈昊宇也展现了她多变的声线，和对不同风格的驾驭能力。最后的最后，如果巡演能有一首唱跳就更好了。嘻。</p>\n        </section>",
+        "is_published": true,
+        "featured": true,
+        "publish_date": "2026-04-13T04:00:00.000Z"
+      },
+      {
+        "id": "7494f9cf-0268-4dfd-8d8a-1bb86fcc45a5",
+        "slug": "northwest-sand-part-1",
+        "title": "攥不住的，西北的沙（上）",
+        "summary": "从宁波起飞，到西宁、德令哈、察尔汗盐湖与北上敦煌的路上，风景、驾驶、风沙和身体感受交织在一起，像一篇正在继续生长的西北行记。",
+        "category": "见闻",
+        "cover_image_url": "/images/articles/northwest-sand/media/image19.jpeg",
+        "content_html": "<p class=\"article-lead\">宁波栎社机场有一家店叫“牛吃草”，出发时看“牛”是“牛”字，看“草”是“草”字；八日后再见这三字，记忆开始倒带，脑海浮现的是牛低头吃草的动图。这趟路写到这里还只是上半程，所以先以“（上）”的形式，把那些最先抵达身体的风、路和辽阔记下来。</p>\n\n        <p class=\"article-note\">这是（上）哦，下篇还在难产中:P。</p>\n\n        <section class=\"article-section\">\n          <h2>成行：先从逃离开始</h2>\n          <p>此次成行，全靠一种冲动，一种试图逃离城市。逃离了城市，又能去哪呢，那就只能投入大自然的臂弯。青甘大环线，三千公里，自驾，有点挑战的样子，好像不赖，就这样决定吧。这样的心态健康吗？逃离，寻求刺激，为了证明自己的驾驶水平？带着一分没说的疑虑和七分的期待，出发了。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image1.png\" alt=\"旅途起点的记录图片\" loading=\"lazy\">\n          </figure>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>抵达西宁：期待灌进胸腔</h2>\n          <p>凉爽的空气接待了我们。那一分疑虑像水分一样，一到西北就被蒸发了，十分的期待灌进了胸腔。一起灌来的还有未知的挑战。前一天晚上突然得知需要在旅途中做 PPT 的消息；抵达当天突然变卦的天气，西宁大部分地区“暴雨”预警；随之变动的环环相扣的行程安排……西宁的第一晚，加上高海拔的助攻，注定不安稳。</p>\n          <p>早上五点半，我已经在西宁的街上狂奔，去取此次的自驾用车。无人的路上，冷风肆虐，把我冻得稀里哗啦的。这么急，是因为“据说”早上九点就要开始下大暴雨了。显然，青海湖不会被淹没，但我的视线会被淹没，我没有赌的资格。</p>\n          <div class=\"article-gallery\">\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image2.png\" alt=\"启程前的城市清晨\" loading=\"lazy\">\n            </figure>\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image3.jpeg\" alt=\"旅途初段的直幅照片\" loading=\"lazy\">\n            </figure>\n          </div>\n          <p>有个道理，是这一路上我才明白的。天公作不作美，由不得人。有时候，人能做的真的只有祈祷。在这一刻，我心底泛起了那份我曾经难以理解的虔诚。这回祈祷还真的有用。是晴天。当青海湖以一种深邃清晰的面貌，悄然进入视野时，内心是故作镇定的雀跃。你，好蓝，好安静。当然也好大好辽阔，不过这是后来的感慨了。因为光是从青海湖的一面绕行，我们就开了大半天。</p>\n          <blockquote>\n            <p>我仿佛在期待这样的情况</p>\n            <p>看见人类文明一点一点的崩毁</p>\n            <p>在时间轻蔑的流动里</p>\n            <p>极远变得极近 极大变得极微</p>\n            <p>我的左眼可以看见几百里之外的景物</p>\n            <p>我的右手不断织出原始的图案</p>\n            <p>我的皮肤不再害怕寒冷</p>\n            <p>我的头发在月光下无法停止成长</p>\n          </blockquote>\n          <p>在无尽明亮的沿湖公路上，当车上的人睡着了，车里放着旅行团乐队的歌，我感受到了一种空旷感，四下无人，四周皆空。辽阔的空间感渗入我的心胸，内心的感受飘向远方。身外无需矫饰，心中没有负担。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image4.jpeg\" alt=\"沿湖公路的横幅风景\" loading=\"lazy\">\n          </figure>\n          <p>途中，在乌兰服务区歇脚。此时天已经阴了，风很大，几乎要把人吹走。阴天，暴雨前，荒漠，前不着村，后不着店，在这个像“驿站”的地方有一些人类在活动。有一种很原始的亲切感和兴奋感油然而生。要是这里不是在荒漠之中，要是这里没有人，都没有这种感觉。哦，对了。“今夜我在德令哈”，晚安。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>柏树山：我最爱的一天</h2>\n          <p>早晨的德令哈凉飕飕的。我妈说这里的水好冷，我忽然想到，这水又是从哪来的呢？答案就在今日的第一个目的地。德令哈的背后就是一片山，即使到了九月，山上也依旧有雪顶。山后面还藏着一座山，叫柏树山。柏树山，一个听起来就足够有趣的地方。特别是在这样一个无际的荒漠之中，它的存在堪比桃花源。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image5.png\" alt=\"前往柏树山的公路与山体\" loading=\"lazy\">\n          </figure>\n          <p>进了入山的关口，车子盘山而上，一起的还有从山顶盘旋至更高空的大鸟，一群和这片大山一样神秘沉默的生灵。继续往里走，山间的雾气似乎也因为我们身在其中而不知所处了。好马配好鞍，好山更要配好水。柏树山，配的是一条清冽的宝石蓝色的小溪。嗯，“山设”不倒。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image6.jpeg\" alt=\"柏树山的山体和溪流\" loading=\"lazy\">\n          </figure>\n          <p>山本身也很有意思。这里大概就三四种颜色，灰白色，红棕色，浅绿色，褐绿色。有些山体裸露着白色的岩体。有些山体覆盖着浅浅的草皮。最有趣的，也是我最爱的，是山上点缀的柏树。这些柏树以一种沉静的墨绿色立在浅浅的草皮之上。如果这里是一幅画，那么这些柏树一定是画画之人支颐思忖良久后，从调色盘已有的颜料中点蘸几笔后，斟酌地落笔于画布的结果。然后，柏树山就拥有了它的名字。</p>\n          <p>踩着柔软不失韧性的草皮，眼前的草坡延伸进去就是高耸陡峭的白色岩体，背后在路的对面就是点缀着柏树的草坡。我被抱住了。那一刻没有人说话，动物也安静得不得了，甚至连风都没有了踪迹，耳朵在这一刻拾回了动物应有的敏锐。你说，在这一刻我能听到什么？只有自己的呼吸声。</p>\n          <p>今天还有一个目的地，托素湖。离开德令哈市区，沿着德小高速一直走大概一个小时，拐弯下高速，就是青海可鲁克湖托素湖自然保护区的地界了。</p>\n          <div class=\"article-gallery\">\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image7.jpeg\" alt=\"保护区道路一侧的植物与果实\" loading=\"lazy\">\n            </figure>\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image8.jpeg\" alt=\"托素湖附近的道路景象\" loading=\"lazy\">\n            </figure>\n          </div>\n          <p>路不宽，两边的灌木丛茂盛到遮蔽了部分路面，其上是一大团一大团的浆果。果子有两种颜色，一种是纯黑的，一种是艳红的。道路两侧是一些几乎干涸或者已经干涸的湿地。左侧就是可鲁克湖，湖面开阔，离岸不远处还有几只水鸟，它们会时不时猛地钻入水面，然后在很远处，从一个你想不到的地方重新钻出水面，恢复到优雅闲适的姿态。</p>\n          <p>继续行车，限速三四十，我硬是爽快地开到八九十码。然后车上就开始报警，显示胎压异常。一直提着心晃荡着开到可鲁克湖和托素湖之间有人值守的大门。后来，到了怀头他拉服务区检查，轮胎的确无碍，胎压异常只是高原常见的异常报错。虽有插曲，不过今日傍晚还是平安到达了大柴旦。</p>\n          <div class=\"article-gallery\">\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image9.jpeg\" alt=\"傍晚途中的景象之一\" loading=\"lazy\">\n            </figure>\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image10.jpeg\" alt=\"傍晚途中的景象之二\" loading=\"lazy\">\n            </figure>\n          </div>\n          <p>抵达时间不算早，但随着我们的逐渐西行，日落时间越来越晚。大名鼎鼎的翡翠湖离我们不算远，便临时起意前去一探究竟。虽然到达时间恰逢停售时间，但当时八点左右，正是落日时分。有幸看到了“大漠尘烟漫，塞上落日圆”之景。没能一睹翡翠湖，妈妈始终有点遗憾，不过我心里一点也不感到可惜。因为我知道，明天也是值得期待的一天。</p>\n        </section>\n\n        <section class=\"article-section\">\n          <h2>察尔汗盐湖与水上雅丹：像地理课本跃然眼前</h2>\n          <p>从起床到行驶在高速上可能只花了不到半小时。今天是阴天，可能还有雨，一路上又几乎全是典型的荒漠景观，有一种世界末日大片既视感。出发不久道路左侧开始出现绿色植被，不过那只是途径小柴旦湖的路段特供。而后，又是无尽的荒漠。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image11.jpeg\" alt=\"阴天中的荒漠公路\" loading=\"lazy\">\n          </figure>\n          <p>接近察尔汗盐湖时，最先察觉到的是黄色地表上析出的白色盐霜。而后，大量的人造工业设施开始覆盖贫瘠的土地。我意识到在当地人眼里也许察尔汗盐湖首先是工业园区的一部分，而后才是景区。原始的自然景象与现代工业文明以一种毫无过渡的、最粗犷磅礴的形式正面对撞，反差之强，令人感慨。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image12.jpeg\" alt=\"察尔汗盐湖的镜面景象\" loading=\"lazy\">\n          </figure>\n          <p>记得第一天的时候，我们没去素有“天空之镜”的茶卡盐湖，不过倒是在这儿，虽然云层密布，却也邂逅了另一种天空之镜。不过惊喜还在后面。阴天，察尔汗盐湖也是“苹果绿”。</p>\n          <div class=\"article-gallery\">\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image13.jpeg\" alt=\"察尔汗盐湖局部景象之一\" loading=\"lazy\">\n            </figure>\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image14.jpeg\" alt=\"察尔汗盐湖局部景象之二\" loading=\"lazy\">\n            </figure>\n          </div>\n          <p>我想，在描述风景方面，照片比文字管用。此处省略一百张照片……</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image15.jpeg\" alt=\"离开盐湖后前往水上雅丹的途中\" loading=\"lazy\">\n          </figure>\n          <p>离开察尔汗盐湖，前往水上雅丹。路途中，云渐渐散开，天由灰转蓝，颇有一种拨云见日之感。没有选择经过网红的 U 型公路，而选择了走更加冷门的 G215。一路上有很多贴心的路牌，“洼地地貌”“风蚀地貌”“台地地貌”“沙漠雅丹”等地貌轮番登场，有种高中地理课本跃然眼前的感慨。</p>\n          <blockquote>\n            <p>跟车，心塞；超车，艰难。</p>\n            <p>总结：心力交瘁，别来。</p>\n          </blockquote>\n          <div class=\"article-gallery\">\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image16.png\" alt=\"水上雅丹景区景象之一\" loading=\"lazy\">\n            </figure>\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image17.jpeg\" alt=\"水上雅丹景区景象之二\" loading=\"lazy\">\n            </figure>\n          </div>\n          <p>而后就是水上雅丹景区。虽然景区往往开发得比较好，但本人一进了景区，感受力就被削弱了，变成了一位很呆的“游客”。以下是一些常规风景照。</p>\n          <p>水上雅丹所在的柴达木盆地，在地质历史时期曾是古湖盆地。湖泊干涸后，留下了厚厚的湖相沉积地层。后来在持续风蚀和湖面抬升的共同作用下，已经形成的雅丹群底部逐渐被淹没，最后形成了世界上面积最大的“水上雅丹”地貌景观。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image18.jpeg\" alt=\"水上雅丹的水岸地貌\" loading=\"lazy\">\n          </figure>\n          <p>今晚的宿处在 G215 和 G315 交界处的服务区。天黑抵达时，有种“流浪汉终于找到了自己预定的集装箱”的感动与欣慰。</p>\n        </section>\n\n        <section class=\"article-section article-section-end\">\n          <h2>驱车千里，北上敦煌</h2>\n          <p>住在服务区的一大便利，就是起身即可重回国道。又是一边开车一边解决早饭的一天。今早的沙尘把昨夜国道上炫目的货车车灯和喧嚣的引擎声一并涤荡干净。今日能见度不高，弥漫空中的沙尘像一个隔音罩把天地笼罩着，周遭只剩一片寂静。</p>\n          <p>今天走 G215 国道。由于我们早已深入柴达木盆地腹地，路两边就是无垠的荒漠。路很直，但由于沙尘的原因，能见度不高，大概只能看到前方几百米。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image19.jpeg\" alt=\"北上敦煌途中被风沙笼罩的道路\" loading=\"lazy\">\n          </figure>\n          <p>随着我们的前进，路两边的地貌也逐渐变化，从一览无余的平坦荒漠逐渐过渡到典型的雅丹地貌。雅丹地貌的垄脊和沟槽的走向与道路延伸的方向“正交”。这对驾驶者而言，并不是一个好消息。每一道垄沟都是一条无形的“沙河”，路不过是沙河下的“桥”。更何况沟槽的走势并非朝夕而成，其中也暗含着常年的风向。今日也不例外，西北风裹挟着风沙在垄沟中狂奔，无所忌惮地肆虐过路面，然后继续往东奔去。</p>\n          <p>此情此景，就像在刚开辟的火星营地间往返。终点在哪似乎都不重要了，我唯一意识到的是，我和那无所顾忌的风沙，仅有一层车身之隔。自然没有刻意展露它的力量，这只是它千万年来周而复始的寻常一刻。但我们平常被保护得太好了，离真正的“威胁”太过遥远。此时此刻，“威胁”却近在咫尺，这种陌生、不加修饰的压迫感，在这一刻让我和自己的生命本身紧紧依偎。在这种不真实感中，我攥紧了手里的方向盘。</p>\n          <div class=\"article-gallery\">\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image20.png\" alt=\"雅丹路段景象之一\" loading=\"lazy\">\n            </figure>\n            <figure class=\"article-figure\">\n              <img src=\"/images/articles/northwest-sand/media/image21.png\" alt=\"雅丹路段景象之二\" loading=\"lazy\">\n            </figure>\n          </div>\n          <p>在这里我想补充的是，其实当时我并不确定我在地图中的具体位置，直到现在我开始回忆才打开卫星地图查看整体地貌。在俯视视角下，当时当地的感受迅速缩小，成了过去某个时刻公路上移动的一点，沿着回忆穿越时空给我一种延迟的震撼。</p>\n          <p>除了地貌的着色和荒凉程度像在火星，路上还有一些颇诡异的“装置”，散发出原始文明的气息。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image22.jpeg\" alt=\"路边石堆景象\" loading=\"lazy\">\n          </figure>\n          <p>当我们只是发现一个这样式的小石碓时，还不以为意。直到这一路上，每隔一段距离就会刷新一个或者一群这样石块垒成的小堆。其实有的石碓还算不上精致，但有的堆顶近乎完美，还出现在这样一个“一年一场风，从春刮到冬”的地方，多了一些怪诞和神秘。我的第一个联想是，“麦田怪圈”荒漠版之“荒漠怪堆”，有点《走近科学》或《地理·中国》的味道。</p>\n          <figure class=\"article-figure\">\n            <img src=\"/images/articles/northwest-sand/media/image23.png\" alt=\"旅途中的石堆细节\" loading=\"lazy\">\n          </figure>\n          <p>大胆想象，随意求证。嘛呢堆，也称玛尼堆，在藏语中有“垒起来的石头”的意思。藏民自古信仰“万物有灵”，认为日月星辰、山川草木、飞禽鸟兽等一切万物皆具灵魂，石头同样有生命力，并将真言、经文刻于石头上，进行功德活动。在后面的黑独山景区内，我们甚至看到了游客垒石头的集中地。</p>\n          <p>这段路上几乎没什么可以停车的地方，有个停靠点让人印象深刻，南八仙驿站。其实就是“南八仙魔鬼城”附近一个带有公共旱厕的路边停靠点。打转向灯、刹车靠边、回正拉手刹，一气呵成；摘下手套、戴上面罩、系紧登山帽，行云流水。下一步，开车门。没想到由于向北行驶，左手边正是西风的来路，第一次开车门刚开一条缝就被一把摁回车里。第一次是小瞧了西风的威力，第二次鼓足了劲才把车门肘开。下车后就呈马步状，脚使劲蹬着地，虽然从物理上讲这是无用功。</p>\n          <p class=\"article-note\">上篇先写到这里。接下来的路还会继续往敦煌深入，也会继续把那些尚未整理成句子的风、路和尘土慢慢写出来。</p>\n        </section>",
+        "is_published": true,
+        "featured": true,
+        "publish_date": "2026-01-28T04:00:00.000Z"
+      },
+      {
+        "id": "4a8d4072-e998-4344-b814-f5e450e4f68c",
+        "slug": "在摘抄之间停一下-一本书的边缘笔记",
+        "title": "在摘抄之间停一下：一本书的边缘笔记",
+        "summary": "从几段反复停下来的句子出发，记录它们为什么被划线、它们在当下触到了什么，以及阅读本身如何慢慢变成一种对话。",
+        "category": "阅读",
+        "cover_image_url": null,
+        "content_html": "<p>从几段反复停下来的句子出发，记录它们为什么被划线、它们在当下触到了什么，以及阅读本身如何慢慢变成一种对话。</p>",
+        "is_published": true,
+        "featured": false,
+        "publish_date": "2026-02-11T04:00:00.000Z"
+      }
+    ],
+    "gallery_items": [
+      {
+        "id": "304908ea-e75a-4aa2-ace5-c87bb0c84f7b",
+        "title": "250531",
+        "category": "画画",
+        "image_url": "/images/gallery/250531.jpg",
+        "thumbnail_url": "/images/gallery/250531.jpg",
+        "description": "",
+        "is_published": true,
+        "sort_order": 1,
+        "publish_date": "2025-05-31T04:00:00.000Z"
+      },
+      {
+        "id": "1796ad7b-691d-449d-8224-d4e1a63c3a7d",
+        "title": "250511",
+        "category": "画画",
+        "image_url": "/images/gallery/250511.jpg",
+        "thumbnail_url": "/images/gallery/250511.jpg",
+        "description": "",
+        "is_published": true,
+        "sort_order": 2,
+        "publish_date": "2025-05-11T04:00:00.000Z"
+      },
+      {
+        "id": "ff6a1206-91c1-4185-942a-8517f6cadcf8",
+        "title": "250425",
+        "category": "画画",
+        "image_url": "/images/gallery/250425.jpg",
+        "thumbnail_url": "/images/gallery/250425.jpg",
+        "description": "",
+        "is_published": true,
+        "sort_order": 3,
+        "publish_date": "2025-04-25T04:00:00.000Z"
+      },
+      {
+        "id": "e1115604-c6d8-49d9-b5f6-b147f2c091ac",
+        "title": "250406",
+        "category": "画画",
+        "image_url": "/images/gallery/250406.jpg",
+        "thumbnail_url": "/images/gallery/250406.jpg",
+        "description": "",
+        "is_published": true,
+        "sort_order": 4,
+        "publish_date": "2025-04-06T04:00:00.000Z"
+      },
+      {
+        "id": "8fda6899-fcf8-4dfd-914b-624639852b26",
+        "title": "050330",
+        "category": "画画",
+        "image_url": "/images/gallery/050330.jpg",
+        "thumbnail_url": "/images/gallery/050330.jpg",
+        "description": "",
+        "is_published": true,
+        "sort_order": 5,
+        "publish_date": "2005-03-30T04:00:00.000Z"
+      },
+      {
+        "id": "0974968a-6ee3-402a-8404-62cc05f37a34",
+        "title": "窗边慢光",
+        "category": "摄影",
+        "image_url": "",
+        "thumbnail_url": null,
+        "description": "玻璃、反光和晚一些落下来的日光。",
+        "is_published": true,
+        "sort_order": 6,
+        "publish_date": "2026-03-01T04:00:00.000Z"
+      },
+      {
+        "id": "65dbda19-b875-447c-b662-43ef808d56f0",
+        "title": "未完成的边界",
+        "category": "画画",
+        "image_url": "",
+        "thumbnail_url": null,
+        "description": "像在纸面上追一段还没有被说明白的轮廓。",
+        "is_published": true,
+        "sort_order": 7,
+        "publish_date": "2026-02-01T04:00:00.000Z"
+      },
+      {
+        "id": "383c091b-22fb-4065-a97a-d2d106ef71aa",
+        "title": "街口风景",
+        "category": "摄影",
+        "image_url": "",
+        "thumbnail_url": null,
+        "description": "日常里短暂对齐的一点秩序感。",
+        "is_published": true,
+        "sort_order": 8,
+        "publish_date": "2025-12-01T04:00:00.000Z"
+      },
+      {
+        "id": "4bc5baa7-77a0-469d-9309-f396dc6fbaf8",
+        "title": "植物练习",
+        "category": "画画",
+        "image_url": "",
+        "thumbnail_url": null,
+        "description": "",
+        "is_published": true,
+        "sort_order": 9,
+        "publish_date": "2025-11-01T04:00:00.000Z"
+      },
+      {
+        "id": "582715de-e835-443d-864c-830d1044cef9",
+        "title": "雨后地面",
+        "category": "摄影",
+        "image_url": "",
+        "thumbnail_url": null,
+        "description": "更接近观察笔记，而不是一张完成了的照片。",
+        "is_published": true,
+        "sort_order": 10,
+        "publish_date": "2025-10-01T04:00:00.000Z"
+      },
+      {
+        "id": "89e51cd2-48b1-4547-bd9e-1dab7af71132",
+        "title": "人物局部",
+        "category": "画画",
+        "image_url": "",
+        "thumbnail_url": null,
+        "description": "留下姿态、留白和一些尚未决定的线。",
+        "is_published": true,
+        "sort_order": 11,
+        "publish_date": "2025-09-01T04:00:00.000Z"
+      }
+    ],
+    "music_items": []
+  },
+  "warnings": [
+    "未在 audio/ 目录中找到可迁移的本地音频文件，music_items 将保持为空。"
+  ]
+}

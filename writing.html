@@ -4,70 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zoey | 写作</title>
-  <meta name="description" content="Zoey 的写作主页，按评论、见闻、阅读组织文章与预览。">
+  <meta name="description" content="Zoey 的写作主页，按分类组织已发布文章。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="writing">
-  <div class="writing-layout">
-    <aside class="writing-rail">
-      <div class="writing-rail-inner">
-        <a href="index.html" class="writing-identity" aria-label="回到首页">
-          <span class="writing-identity-mark">Z</span>
-          <span class="writing-identity-copy">
-            <strong>Zoey</strong>
-            <em>Writing Home</em>
-          </span>
-        </a>
+  <div class="page-shell page-shell-wide subpage-frame">
+    <header class="topbar" aria-label="全站主导航"></header>
 
-        <div class="writing-rail-head">
-          <p class="section-label">Writing / Essays / Notes</p>
-          <h1>写作</h1>
-          <p>把评论、见闻与阅读放在同一个入口里。点进来就能直接看到正在写些什么，而不是先面对一层空分类。</p>
-        </div>
+    <main class="subpage-main writing-shell">
+      <div class="subpage-system writing-layout">
+        <aside class="subpage-sidebar-left writing-rail">
+          <div class="subpage-rail-card writing-rail-inner">
+            <div class="writing-rail-head">
+              <p class="section-label">Writing / Essays / Notes</p>
+              <h1>写作</h1>
+              <p>从 Supabase 读取已发布文章，保留统一版心与分栏比例，让列表、筛选和详情页都能继续自然生长。</p>
+            </div>
 
-        <nav class="writing-category-nav" id="writingCategoryNav" aria-label="写作分类导航"></nav>
-      </div>
-    </aside>
+            <nav class="writing-category-nav" id="writingCategoryNav" aria-label="写作分类导航"></nav>
+          </div>
+        </aside>
 
-    <div class="writing-stage">
-      <header class="topbar topbar-secondary">
-        <a class="brand" href="index.html" aria-label="回到首页">
-          <span class="brand-mark">Z</span>
-          <span class="brand-text">
-            <strong>Zoey</strong>
-            <em>notes & works</em>
-          </span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav class="nav" id="site-nav" aria-label="主导航"></nav>
-      </header>
-
-      <div class="writing-stage-grid">
-        <main class="writing-feed">
-          <section class="writing-feed-intro">
+        <section class="subpage-content-main writing-stage">
+          <section class="subpage-content-intro">
             <p class="section-label">Writing Frontpage</p>
-            <h2 id="writingPageTitle">全部</h2>
-            <p class="writing-feed-lead" id="writingPageLead">这里先展示所有写作方向的文章预览，你可以从评论、见闻、阅读切进去继续看。</p>
+            <p class="writing-feed-lead" id="writingPageLead">这里先展示所有已发布文章，你可以按分类或关键词继续筛选。</p>
           </section>
 
-          <div class="writing-sections" id="writingSections" aria-live="polite"></div>
-        </main>
+          <main class="writing-feed">
+            <div class="writing-sections" id="writingSections" aria-live="polite"></div>
+          </main>
+        </section>
 
-        <aside class="writing-aside">
+        <aside class="subpage-sidebar-right writing-aside">
           <section class="writing-panel">
             <p class="section-label">Search</p>
             <h3>搜索</h3>
             <label class="writing-search" for="writingSearchInput">
               <span class="sr-only">搜索文章</span>
-              <input type="search" id="writingSearchInput" class="writing-search-input" placeholder="搜索标题、摘要、标签">
+              <input type="search" id="writingSearchInput" class="writing-search-input" placeholder="搜索标题、摘要、分类">
             </label>
           </section>
 
@@ -90,11 +68,12 @@
           </section>
         </aside>
       </div>
-    </div>
+    </main>
   </div>
 
-  <script src="js/writing-data.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/writing.js"></script>
+  <script src="js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pages/writing.js"></script>
 </body>
 </html>

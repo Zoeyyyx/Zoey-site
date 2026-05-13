@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音乐管理 | Zoey</title>
+  <meta name="description" content="Zoey Site 音乐内容管理。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin" data-admin-page="music">
+  <div class="page-shell page-shell-wide">
+    <header class="topbar admin-topbar">
+      <a class="brand" href="../index.html" aria-label="回到前台首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>admin</em>
+        </span>
+      </a>
+      <nav class="nav admin-nav" id="admin-nav" aria-label="后台导航"></nav>
+      <div class="admin-topbar-actions">
+        <span class="admin-user-email" id="adminUserEmail"></span>
+        <button class="admin-secondary-button" id="adminSignOut" type="button">退出</button>
+      </div>
+    </header>
+
+    <main class="subpage-main admin-main">
+      <section class="page-titlebar">
+        <div>
+          <p class="section-label">Admin / Music</p>
+          <h1>音乐管理</h1>
+        </div>
+        <div class="admin-titlebar-actions">
+          <div class="admin-mode-switch" aria-label="音乐管理模式">
+            <button class="admin-secondary-button is-active" id="musicItemsMode" data-admin-view="music-items" type="button">音乐条目</button>
+            <button class="admin-secondary-button" id="musicReviewsMode" data-admin-view="music-reviews" type="button">乐评</button>
+          </div>
+          <button class="admin-primary-button" id="createNewRecord" type="button">新建音乐条目</button>
+        </div>
+      </section>
+
+      <p class="admin-notice" id="adminNotice" hidden></p>
+
+      <section class="admin-crud-layout">
+        <aside class="paper admin-list-panel">
+          <p class="section-label">Records</p>
+          <div class="admin-record-list" id="adminRecordList" aria-live="polite"></div>
+        </aside>
+
+        <section class="paper admin-editor-panel" id="musicItemPanel">
+          <form class="admin-form" id="adminEditorForm">
+            <input type="hidden" name="id">
+            <input type="hidden" name="cover_image_url">
+            <input type="hidden" name="audio_url">
+            <div class="admin-form-grid">
+              <label class="admin-field">
+                <span>标题</span>
+                <input type="text" name="title" required>
+              </label>
+              <label class="admin-field">
+                <span>作者</span>
+                <input type="text" name="artist">
+              </label>
+              <label class="admin-field">
+                <span>发布日期</span>
+                <input type="datetime-local" name="publish_date">
+              </label>
+              <label class="admin-field">
+                <span>排序</span>
+                <input type="number" name="sort_order" placeholder="可为空">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>封面上传</span>
+                <input type="file" name="cover_file" accept="image/*">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>音频上传</span>
+                <input type="file" name="audio_file" accept="audio/*">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>说明</span>
+                <textarea name="description" rows="6"></textarea>
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>歌词 / 备注</span>
+                <textarea name="lyrics_or_notes" rows="10"></textarea>
+              </label>
+            </div>
+            <label class="admin-checkbox">
+              <input type="checkbox" name="is_published">
+              <span>立即发布</span>
+            </label>
+            <div class="admin-form-actions">
+              <button class="admin-primary-button" type="submit">保存</button>
+              <button class="admin-danger-button" id="deleteRecord" type="button">删除</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="paper admin-editor-panel" id="musicReviewPanel" data-admin-panel="music-reviews" hidden>
+          <form class="admin-form" id="musicReviewForm">
+            <input type="hidden" name="id">
+            <section class="admin-quick-review-card">
+              <div class="admin-settings-head">
+                <div>
+                  <p class="section-label">Quick Review</p>
+                  <h2>快速乐评录入</h2>
+                </div>
+                <p>粘贴歌名、歌手或网易云链接，点击自动识别后选择候选；也可以不选候选，直接保存短评。</p>
+              </div>
+
+              <label class="admin-field admin-field-wide">
+                <span>歌曲信息</span>
+                <textarea name="quick_music_input" rows="4" placeholder="粘贴歌名 / 歌手 / 网易云链接，例如：&#10;잭 케루악 (feat. 양희은)&#10;Jack Kerouac (feat. Yang Hee Eun)"></textarea>
+              </label>
+
+              <div class="admin-form-actions">
+                <button class="admin-secondary-button" id="autoRecognizeMusicBtn" type="button">自动识别</button>
+                <small class="admin-field-note" id="musicAutofillStatus">粘贴后不会自动联网，只有点击“自动识别”才搜索候选。</small>
+              </div>
+
+              <div class="admin-music-candidates" id="musicCandidates" aria-live="polite"></div>
+
+              <div class="admin-form-grid">
+                <label class="admin-field admin-field-wide">
+                  <span>短评</span>
+                  <textarea name="quick_review_short" rows="4" placeholder="写几句你听到的感觉……"></textarea>
+                </label>
+                <label class="admin-field">
+                  <span>标签</span>
+                  <input type="text" name="quick_tags" placeholder="例如 house, citypop, 情绪, 夜晚">
+                </label>
+                <label class="admin-field">
+                  <span>评分</span>
+                  <input type="number" name="quick_rating" min="0" max="10" step="0.1" placeholder="0 - 10">
+                </label>
+              </div>
+
+              <div class="admin-checkbox-row">
+                <label class="admin-checkbox">
+                  <input type="checkbox" name="quick_is_published" checked>
+                  <span>立即发布</span>
+                </label>
+              </div>
+
+              <div class="admin-form-actions">
+                <button class="admin-primary-button" id="quickSaveMusicReviewBtn" type="submit">保存乐评</button>
+              </div>
+            </section>
+
+            <details class="admin-advanced-editor">
+              <summary>高级编辑</summary>
+              <div class="admin-form-grid">
+              <label class="admin-field">
+                <span>乐评标题</span>
+                <input type="text" name="title">
+              </label>
+              <label class="admin-field">
+                <span>Slug</span>
+                <input type="text" name="slug" placeholder="可自动生成">
+              </label>
+              <label class="admin-field">
+                <span>歌曲名</span>
+                <input type="text" name="song_name">
+              </label>
+              <label class="admin-field">
+                <span>歌手</span>
+                <input type="text" name="artist">
+              </label>
+              <label class="admin-field">
+                <span>备用标题</span>
+                <input type="text" name="alternate_title">
+              </label>
+              <label class="admin-field">
+                <span>Feat. 艺人</span>
+                <input type="text" name="featured_artists" placeholder="逗号分隔">
+              </label>
+              <label class="admin-field">
+                <span>专辑</span>
+                <input type="text" name="album">
+              </label>
+              <label class="admin-field">
+                <span>评分</span>
+                <input type="number" name="rating" min="0" max="10" step="0.1" placeholder="0 - 10">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>网易云链接</span>
+                <input type="url" name="netease_url" placeholder="https://music.163.com/#/song?id=...">
+                <small class="admin-field-note">只解析 song / playlist ID，用网易云官方外链播放器，不解析真实音频地址。</small>
+              </label>
+              <label class="admin-field">
+                <span>歌曲 ID</span>
+                <input type="text" name="netease_song_id">
+              </label>
+              <label class="admin-field">
+                <span>歌单 ID</span>
+                <input type="text" name="netease_playlist_id">
+              </label>
+              <label class="admin-field">
+                <span>播放器类型</span>
+                <select name="player_type">
+                  <option value="netease_song">网易云单曲</option>
+                  <option value="netease_playlist">网易云歌单</option>
+                  <option value="preview">30 秒试听</option>
+                  <option value="external_link">仅外链</option>
+                </select>
+              </label>
+              <label class="admin-field">
+                <span>元数据来源</span>
+                <input type="text" name="metadata_source" placeholder="manual / itunes / musicbrainz">
+              </label>
+              <label class="admin-field">
+                <span>心情</span>
+                <input type="text" name="mood" placeholder="清醒 / 松弛 / 雨夜">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>封面 URL</span>
+                <input type="url" name="cover_url" placeholder="Supabase Storage URL 或外链">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>备用音乐外链</span>
+                <input type="url" name="external_music_url" placeholder="iTunes / MusicBrainz / 其他音乐平台链接">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>试听 URL</span>
+                <input type="url" name="preview_url" placeholder="iTunes 30 秒 previewUrl">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>标签</span>
+                <input type="text" name="tags" placeholder="华语, 电子, 夜晚">
+              </label>
+              <label class="admin-field">
+                <span>发布时间</span>
+                <input type="datetime-local" name="published_at">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>短评</span>
+                <textarea name="review_short" rows="4"></textarea>
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>完整乐评</span>
+                <textarea name="review_body" rows="12"></textarea>
+              </label>
+              </div>
+              <div class="admin-checkbox-row">
+                <label class="admin-checkbox">
+                  <input type="checkbox" name="is_playable" checked>
+                  <span>展示播放器 / 试听</span>
+                </label>
+                <label class="admin-checkbox">
+                  <input type="checkbox" name="is_published">
+                  <span>立即发布</span>
+                </label>
+              </div>
+              <div class="admin-form-actions">
+                <button class="admin-primary-button" id="saveMusicReviewBtn" type="submit">保存乐评</button>
+                <button class="admin-danger-button" id="deleteReviewRecord" type="button">删除</button>
+              </div>
+            </details>
+          </form>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin/music.js"></script>
+</body>
+</html>

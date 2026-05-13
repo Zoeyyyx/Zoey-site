@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理员登录 | Zoey</title>
+  <meta name="description" content="Zoey Site 管理员登录页。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin">
+  <div class="page-shell admin-login-shell">
+    <main class="admin-login-main">
+      <section class="paper admin-login-card">
+        <p class="section-label">Admin Access</p>
+        <h1>管理员登录</h1>
+        <p class="lead">使用 Supabase Auth 的邮箱密码登录。登录成功后进入后台总览。</p>
+
+        <p class="admin-notice is-error" id="loginNotice" hidden></p>
+
+        <form id="adminLoginForm" class="admin-form admin-login-form">
+          <label class="admin-field">
+            <span>邮箱</span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label class="admin-field">
+            <span>密码</span>
+            <input type="password" name="password" required placeholder="请输入密码">
+          </label>
+          <button class="admin-primary-button" type="submit">登录后台</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>碎碎念管理 | Zoey</title>
+  <meta name="description" content="Zoey Site 碎碎念管理。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin" data-admin-page="notes">
+  <div class="page-shell page-shell-wide">
+    <header class="topbar admin-topbar">
+      <a class="brand" href="../index.html" aria-label="回到前台首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>admin</em>
+        </span>
+      </a>
+      <nav class="nav admin-nav" id="admin-nav" aria-label="后台导航"></nav>
+      <div class="admin-topbar-actions">
+        <span class="admin-user-email" id="adminUserEmail"></span>
+        <button class="admin-secondary-button" id="adminSignOut" type="button">退出</button>
+      </div>
+    </header>
+
+    <main class="subpage-main admin-main">
+      <section class="page-titlebar">
+        <div>
+          <p class="section-label">Admin / Notes</p>
+          <h1>碎碎念管理</h1>
+        </div>
+        <button class="admin-primary-button" id="createNewRecord" type="button">新建碎碎念</button>
+      </section>
+
+      <p class="admin-notice" id="adminNotice" hidden></p>
+
+      <section class="admin-crud-layout">
+        <aside class="paper admin-list-panel">
+          <p class="section-label">Records</p>
+          <div class="admin-record-list" id="adminRecordList" aria-live="polite"></div>
+        </aside>
+
+        <section class="paper admin-editor-panel">
+          <form class="admin-form" id="adminEditorForm">
+            <input type="hidden" name="id">
+            <div class="admin-form-grid">
+              <label class="admin-field">
+                <span>标题</span>
+                <input type="text" name="title" placeholder="可为空">
+              </label>
+              <label class="admin-field">
+                <span>发布日期</span>
+                <input type="datetime-local" name="publish_date">
+              </label>
+              <label class="admin-field">
+                <span>心情</span>
+                <input type="text" name="mood" placeholder="可为空">
+              </label>
+              <label class="admin-field">
+                <span>排序</span>
+                <input type="number" name="order_index" placeholder="可为空">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>标签</span>
+                <input type="text" name="tags" placeholder="用逗号分隔">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>正文</span>
+                <textarea name="content" rows="14" required placeholder="写下这条碎碎念"></textarea>
+              </label>
+            </div>
+            <label class="admin-checkbox">
+              <input type="checkbox" name="is_published">
+              <span>立即发布</span>
+            </label>
+            <div class="admin-form-actions">
+              <button class="admin-primary-button" type="submit">保存</button>
+              <button class="admin-danger-button" id="deleteRecord" type="button">删除</button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin/notes.js"></script>
+</body>
+</html>

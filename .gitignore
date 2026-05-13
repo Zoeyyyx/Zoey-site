@@ -1,0 +1,6 @@
+.env
+js/lib/runtime-config.local.js
+node_modules/
+.tmp-chrome-profile*/
+.tmp-chrome-theme-profile*/
+supabase/.temp/

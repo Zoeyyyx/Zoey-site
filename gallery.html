@@ -7,60 +7,70 @@
   <meta name="description" content="Zoey 的视觉作品页面，可同时收纳摄影与绘画。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="gallery">
-  <div class="page-shell">
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="回到首页">
-        <span class="brand-mark">Z</span>
-        <span class="brand-text">
-          <strong>Zoey</strong>
-          <em>notes & works</em>
-        </span>
-      </a>
+  <div class="page-shell subpage-frame">
+    <header class="topbar" aria-label="全站主导航"></header>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
+    <main class="subpage-main visual-page visual-stage">
+      <section class="subpage-system visual-layout" aria-label="视觉作品">
+        <aside class="subpage-sidebar-left visual-sidebar" aria-label="视觉分类">
+          <div class="subpage-rail-card">
+            <div class="subpage-rail-head">
+              <p class="section-label">Image Works</p>
+              <h1>视觉</h1>
+              <p>把摄影、画画与杂项作品放进同一套稳定框架里。</p>
+            </div>
 
-      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
-    </header>
+            <div class="visual-filter visual-filter-rail" role="tablist" aria-label="视觉作品筛选">
+              <button class="visual-filter-button is-active" type="button" data-visual-filter="all" aria-pressed="true">全部</button>
+              <button class="visual-filter-button" type="button" data-visual-filter="drawing" aria-pressed="false">画画</button>
+              <button class="visual-filter-button" type="button" data-visual-filter="photo" aria-pressed="false">摄影</button>
+              <button class="visual-filter-button" type="button" data-visual-filter="misc" aria-pressed="false">杂项</button>
+            </div>
+          </div>
+        </aside>
 
-    <main class="subpage-main visual-page">
-      <section class="sub-hero whiteboard visual-hero">
-        <div class="visual-hero-copy">
-          <p class="section-label">Image Works</p>
-          <h1>视觉</h1>
-          <p class="lead">这里同时收纳摄影与绘画。它们不是彼此分开的两栏，而是同一条视觉线索里慢慢长出的不同作品。</p>
-        </div>
-        <div class="visual-filter" role="tablist" aria-label="视觉作品筛选">
-          <button class="visual-filter-button is-active" type="button" data-visual-filter="all" aria-pressed="true">全部</button>
-          <button class="visual-filter-button" type="button" data-visual-filter="photo" aria-pressed="false">摄影</button>
-          <button class="visual-filter-button" type="button" data-visual-filter="drawing" aria-pressed="false">绘画</button>
-        </div>
+        <section class="subpage-content-main visual-content" aria-live="polite">
+          <header class="subpage-content-intro visual-head" aria-label="视觉页面说明">
+            <p class="section-label">Visual Frontpage</p>
+            <p>分类和辅助信息固定在两侧，中栏保持为唯一变化的作品展示区。</p>
+          </header>
+          <div class="visual-grid" id="visual-grid"></div>
+        </section>
+
+        <aside class="subpage-sidebar-right">
+          <div class="subpage-rail-stack">
+            <section class="subpage-side-card">
+              <p class="section-label">Archive</p>
+              <h3 id="galleryPublishedCount">0</h3>
+              <p>当前已发布视觉作品数量。</p>
+            </section>
+
+            <section class="subpage-side-card">
+              <p class="section-label">Categories</p>
+              <div class="subpage-side-chip-row">
+                <span class="subpage-side-chip">画画</span>
+                <span class="subpage-side-chip">摄影</span>
+                <span class="subpage-side-chip">杂项</span>
+              </div>
+            </section>
+
+            <section class="subpage-side-card">
+              <p class="section-label">Viewing</p>
+              <p>点击中栏作品即可展开查看，左右两栏位置在页面切换时保持不变。</p>
+            </section>
+          </div>
+        </aside>
       </section>
-
-      <section class="visual-overview" aria-label="视觉分类概览">
-        <article class="paper visual-overview-card">
-          <p class="section-label">Photography</p>
-          <h2>摄影</h2>
-          <p>更接近光线、街道、天气与日常观察。它们像是慢慢被看见的瞬间，而不是单纯的图库缩略图。</p>
-        </article>
-        <article class="paper visual-overview-card">
-          <p class="section-label">Drawing</p>
-          <h2>绘画</h2>
-          <p>收纳练习、草图、局部完成的画面，以及还在犹豫中的线条。它们和摄影一起构成更完整的视觉习惯。</p>
-        </article>
-      </section>
-
-      <section class="visual-grid" id="visual-grid" aria-live="polite"></section>
     </main>
   </div>
 
-  <script src="js/gallery-data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pages/gallery.js"></script>
 </body>
 </html>

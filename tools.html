@@ -7,69 +7,99 @@
   <meta name="description" content="Zoey 的工具入口页，收纳练习器与站内小工具。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="tools">
-  <div class="page-shell">
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="回到首页">
-        <span class="brand-mark">Z</span>
-        <span class="brand-text">
-          <strong>Zoey</strong>
-          <em>notes & works</em>
-        </span>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
-    </header>
+  <div class="page-shell subpage-frame">
+    <header class="topbar" aria-label="全站主导航"></header>
 
     <main class="subpage-main tool-card-page">
-      <section class="tool-card-grid" aria-label="工具入口">
-        <a class="paper tool-card tool-card-primary" href="doremi.html" aria-label="进入 Doremi 乐理练习工具">
-          <div class="tool-card-head">
-            <p class="section-label">Music Theory Tool</p>
-            <span class="tool-card-state">已接入</span>
-          </div>
-          <h1>Doremi</h1>
-          <p>用于乐理、识谱与听觉练习的小工具，适合随手做一点日常训练。</p>
-        </a>
+      <div class="subpage-system">
+        <aside class="subpage-sidebar-left">
+          <div class="subpage-rail-card">
+            <div class="subpage-rail-head">
+              <p class="section-label">Tools / Utilities</p>
+              <h1>工具</h1>
+              <p>工具页也进入同一套三栏框架，只让中栏的卡片内容发生变化。</p>
+            </div>
 
-        <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
-          <div class="tool-card-head">
-            <p class="section-label">Next</p>
-            <span class="tool-card-state tool-card-state-muted">待接入</span>
+            <div class="subpage-side-list">
+              <a href="doremi.html">
+                <strong>Doremi</strong>
+                <small>乐理、识谱与练耳工具入口</small>
+              </a>
+            </div>
           </div>
-          <h2>下一张工具卡</h2>
-          <p>之后可以继续接入新的练习页或小型辅助网页。</p>
-        </article>
+        </aside>
 
-        <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
-          <div class="tool-card-head">
-            <p class="section-label">Next</p>
-            <span class="tool-card-state tool-card-state-muted">待接入</span>
-          </div>
-          <h2>还在整理中</h2>
-          <p>先留一个安静的位置，等下一个工具自然长出来。</p>
-        </article>
+        <section class="subpage-content-main">
+          <section class="subpage-content-intro">
+            <p class="section-label">Tools Frontpage</p>
+            <p>把站内的小工具收在同一个入口里，直接进入可用内容，不再让壳层盖过功能本身。</p>
+          </section>
 
-        <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
-          <div class="tool-card-head">
-            <p class="section-label">Next</p>
-            <span class="tool-card-state tool-card-state-muted">待接入</span>
+          <section class="tool-card-grid" aria-label="工具入口">
+            <a class="paper tool-card tool-card-primary" href="doremi.html" aria-label="进入 Doremi 乐理练习工具">
+              <div class="tool-card-head">
+                <p class="section-label">Music Theory Tool</p>
+                <span class="tool-card-state">已接入</span>
+              </div>
+              <h1>Doremi</h1>
+              <p>用于乐理、识谱与听觉练习的小工具，适合随手做一点日常训练。</p>
+            </a>
+
+            <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
+              <div class="tool-card-head">
+                <p class="section-label">Next</p>
+                <span class="tool-card-state tool-card-state-muted">待接入</span>
+              </div>
+              <h2>下一张工具卡</h2>
+              <p>之后可以继续接入新的练习页或小型辅助网页。</p>
+            </article>
+
+            <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
+              <div class="tool-card-head">
+                <p class="section-label">Next</p>
+                <span class="tool-card-state tool-card-state-muted">待接入</span>
+              </div>
+              <h2>还在整理中</h2>
+              <p>先留一个安静的位置，等下一个工具自然长出来。</p>
+            </article>
+
+            <article class="paper tool-card tool-card-muted" aria-label="待接入工具">
+              <div class="tool-card-head">
+                <p class="section-label">Next</p>
+                <span class="tool-card-state tool-card-state-muted">待接入</span>
+              </div>
+              <h2>更多小网页</h2>
+              <p>以后如果还有别的小网页接进站内，这里会继续补上。</p>
+            </article>
+          </section>
+        </section>
+
+        <aside class="subpage-sidebar-right">
+          <div class="subpage-rail-stack">
+            <section class="subpage-side-card">
+              <p class="section-label">System</p>
+              <h3>统一骨架</h3>
+              <p>工具页的左右栏也固定下来，只让中栏工具卡和详情内容变化。</p>
+            </section>
+
+            <section class="subpage-side-card">
+              <p class="section-label">Next</p>
+              <div class="subpage-side-chip-row">
+                <span class="subpage-side-chip">Ear</span>
+                <span class="subpage-side-chip">Staff</span>
+                <span class="subpage-side-chip">More</span>
+              </div>
+            </section>
           </div>
-          <h2>更多小网页</h2>
-          <p>以后如果还有别的小网页接进站内，这里会继续补上。</p>
-        </article>
-      </section>
+        </aside>
+      </div>
     </main>
   </div>
 
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

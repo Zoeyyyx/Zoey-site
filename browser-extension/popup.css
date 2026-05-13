@@ -1,0 +1,191 @@
+:root {
+  --bg: #f8f7f3;
+  --panel: #fcfbf7;
+  --line: rgba(24, 34, 56, 0.12);
+  --text: #16294a;
+  --body: #49566f;
+  --muted: #7d8798;
+  --blue: #0b43d9;
+  --yellow: #f0c13b;
+  --yellow-soft: #fff3c9;
+  --shadow: 0 14px 34px rgba(20, 30, 48, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 400px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+.popup-shell {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(240, 193, 59, 0.12), transparent 24%),
+    var(--bg);
+}
+
+.popup-head {
+  display: grid;
+  gap: 4px;
+}
+
+.popup-head p,
+.popup-head h1,
+.status {
+  margin: 0;
+}
+
+.popup-head p {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.popup-head h1 {
+  color: var(--text);
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.status {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--body);
+  font-size: 13px;
+  line-height: 1.5;
+  box-shadow: 0 8px 20px rgba(20, 30, 48, 0.04);
+}
+
+.extract-meta {
+  display: block;
+  padding: 9px 11px;
+  border: 1px solid rgba(11, 67, 217, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 250, 240, 0.82);
+  color: var(--body);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.extract-meta.is-hidden {
+  display: none;
+}
+
+.status.is-error {
+  border-color: rgba(190, 82, 64, 0.24);
+  color: #8b3f33;
+}
+
+.status.is-success {
+  border-color: rgba(11, 67, 217, 0.18);
+  background: #edf3ff;
+  color: var(--blue);
+}
+
+.save-form {
+  display: grid;
+  gap: 12px;
+}
+
+label,
+.settings {
+  display: grid;
+  gap: 6px;
+}
+
+label span,
+.settings summary {
+  color: var(--body);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+input {
+  min-height: 38px;
+  padding: 0 11px;
+}
+
+textarea {
+  padding: 10px 11px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(11, 67, 217, 0.32);
+  box-shadow: 0 0 0 3px rgba(11, 67, 217, 0.08);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-row input {
+  width: 16px;
+  min-height: auto;
+  accent-color: var(--blue);
+}
+
+.settings {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(252, 251, 247, 0.72);
+}
+
+.settings summary {
+  cursor: pointer;
+}
+
+.save-button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--blue);
+  color: #fffaf0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.save-button-top {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.save-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.56;
+  box-shadow: none;
+}

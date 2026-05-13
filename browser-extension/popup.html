@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save to Zoey Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup-shell">
+    <header class="popup-head">
+      <p>Zoey Notes</p>
+      <h1>Save X Post</h1>
+    </header>
+
+    <p class="status" id="status" role="status">正在读取当前页面…</p>
+    <div class="extract-meta is-hidden" id="extractMeta"></div>
+
+    <form id="saveForm" class="save-form">
+      <button id="saveButton" class="save-button save-button-top" type="submit">保存到碎碎念</button>
+
+      <label>
+        <span>正文</span>
+        <textarea id="content" rows="7" required placeholder="请先选中帖子正文后再点击扩展"></textarea>
+      </label>
+
+      <label>
+        <span>标题</span>
+        <input id="title" type="text" maxlength="48" placeholder="未命名片段">
+      </label>
+
+      <label>
+        <span>X 链接</span>
+        <input id="sourceUrl" type="url" placeholder="https://x.com/.../status/...">
+      </label>
+
+      <label>
+        <span>发布时间</span>
+        <input id="publishedAt" type="datetime-local">
+      </label>
+
+      <label>
+        <span>标签</span>
+        <input id="tags" type="text" placeholder="随笔, 感受">
+      </label>
+
+      <label class="checkbox-row">
+        <input id="isPublished" type="checkbox" checked>
+        <span>保存后发布到碎碎念</span>
+      </label>
+
+      <label class="checkbox-row">
+        <input id="allowPinned" type="checkbox">
+        <span>允许保存置顶帖</span>
+      </label>
+
+      <details class="settings">
+        <summary>导入接口设置</summary>
+        <label>
+          <span>Import Function URL</span>
+          <input id="endpoint" type="url" placeholder="https://khtyhhgjxwqppakvkdjj.supabase.co/functions/v1/import-x-manual">
+        </label>
+        <label>
+          <span>Personal Import Token</span>
+          <input id="importToken" type="password" placeholder="只用于导入，不是 service_role key">
+        </label>
+      </details>
+    </form>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

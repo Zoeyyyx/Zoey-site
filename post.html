@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章详情 | Zoey</title>
+  <meta name="description" content="Zoey 的文章详情页。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="writing-article" data-nav-active="writing">
+  <div class="page-shell subpage-frame article-shell">
+    <header class="topbar" aria-label="全站主导航"></header>
+
+    <main class="subpage-main article-main">
+      <div class="subpage-system">
+        <aside class="subpage-sidebar-left">
+          <div class="subpage-rail-card">
+            <div class="subpage-rail-head">
+              <p class="section-label">Writing / Detail</p>
+              <h1>文章</h1>
+              <p>文章详情页也固定回同一套三栏系统，只让中栏正文与封面内容变化。</p>
+            </div>
+
+            <div class="subpage-side-list">
+              <a href="writing.html">
+                <strong>返回写作页</strong>
+                <small>回到文章列表继续浏览</small>
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <section class="subpage-content-main">
+          <section class="article-hero">
+            <div class="article-hero-copy">
+              <p class="section-label">Writing / Detail</p>
+              <h1 id="postTitle">加载中</h1>
+              <p class="article-dek" id="postSummary">文章摘要会在这里显示。</p>
+              <div class="article-meta">
+                <span id="postCategory">文章</span>
+                <time id="postDate">--</time>
+              </div>
+            </div>
+            <figure class="article-cover" id="postCover" hidden></figure>
+          </section>
+
+          <article class="article-body" id="postBody" aria-live="polite">
+            <p>正在读取正文。</p>
+          </article>
+        </section>
+
+        <aside class="subpage-sidebar-right">
+          <div class="subpage-rail-stack">
+            <section class="subpage-side-card">
+              <p class="section-label">Reading</p>
+              <p>左栏负责返回与定位，右栏只承担辅助信息，中栏保持为唯一正文阅读区。</p>
+            </section>
+
+            <section class="subpage-side-card">
+              <p class="section-label">Flow</p>
+              <div class="subpage-side-chip-row">
+                <span class="subpage-side-chip">Summary</span>
+                <span class="subpage-side-chip">Cover</span>
+                <span class="subpage-side-chip">Body</span>
+              </div>
+            </section>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pages/post.js"></script>
+</body>
+</html>

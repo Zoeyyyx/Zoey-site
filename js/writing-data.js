@@ -34,7 +34,7 @@
       featured: true
     },
     {
-      id: "essay-004",
+      id: "essay-002",
       category: "observations",
       title: "攥不住的，西北的沙（上）",
       summary: "从宁波起飞，到西宁、德令哈、察尔汗盐湖与北上敦煌的路上，风景、驾驶、风沙和身体感受交织在一起，像一篇正在继续生长的西北行记。",
@@ -42,17 +42,6 @@
       cover: "images/articles/northwest-sand/media/image19.jpeg",
       link: "articles/northwest-sand-part-1.html",
       tags: ["见闻", "西北", "旅行", "公路"],
-      featured: true
-    },
-    {
-      id: "essay-002",
-      category: "observations",
-      title: "\u4ece\u8f66\u7a97\u5411\u5916\uff1a\u4e00\u6b21\u65c5\u884c\u6e38\u8bb0\u7684\u7f13\u6162\u5c55\u5f00",
-      summary: "\u5199\u9014\u4e2d\u770b\u89c1\u7684\u8def\u9762\u3001\u7ad9\u53f0\u3001\u5929\u6c14\u548c\u77ed\u6682\u505c\u7559\u3002\u5b83\u4e0d\u662f\u653b\u7565\uff0c\u4e5f\u4e0d\u6025\u7740\u603b\u7ed3\uff0c\u53ea\u60f3\u4fdd\u7559\u65c5\u884c\u91cc\u90a3\u4e9b\u5c1a\u672a\u88ab\u547d\u540d\u7684\u7247\u6bb5\u611f\u3002",
-      date: "2026-03-18",
-      cover: "",
-      link: "#",
-      tags: ["\u65c5\u884c", "\u6e38\u8bb0", "\u89c1\u95fb"],
       featured: true
     },
     {

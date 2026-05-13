@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视觉管理 | Zoey</title>
+  <meta name="description" content="Zoey Site 视觉作品管理。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin" data-admin-page="gallery">
+  <div class="page-shell page-shell-wide">
+    <header class="topbar admin-topbar">
+      <a class="brand" href="../index.html" aria-label="回到前台首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>admin</em>
+        </span>
+      </a>
+      <nav class="nav admin-nav" id="admin-nav" aria-label="后台导航"></nav>
+      <div class="admin-topbar-actions">
+        <span class="admin-user-email" id="adminUserEmail"></span>
+        <button class="admin-secondary-button" id="adminSignOut" type="button">退出</button>
+      </div>
+    </header>
+
+    <main class="subpage-main admin-main">
+      <section class="page-titlebar">
+        <div>
+          <p class="section-label">Admin / Gallery</p>
+          <h1>视觉作品管理</h1>
+        </div>
+        <button class="admin-primary-button" id="createNewRecord" type="button">新建作品</button>
+      </section>
+
+      <p class="admin-notice" id="adminNotice" hidden></p>
+
+      <section class="admin-crud-layout">
+        <aside class="paper admin-list-panel">
+          <p class="section-label">Records</p>
+          <div class="admin-record-list" id="adminRecordList" aria-live="polite"></div>
+        </aside>
+
+        <section class="paper admin-editor-panel">
+          <form class="admin-form" id="adminEditorForm">
+            <input type="hidden" name="id">
+            <input type="hidden" name="image_url">
+            <input type="hidden" name="thumbnail_url">
+            <div class="admin-form-grid">
+              <label class="admin-field">
+                <span>标题</span>
+                <input type="text" name="title" required>
+              </label>
+              <label class="admin-field">
+                <span>分类</span>
+                <select name="category">
+                  <option value="drawing">画画</option>
+                  <option value="photo">摄影</option>
+                  <option value="misc">杂项</option>
+                </select>
+              </label>
+              <label class="admin-field">
+                <span>发布日期</span>
+                <input type="datetime-local" name="publish_date">
+              </label>
+              <label class="admin-field">
+                <span>排序</span>
+                <input type="number" name="sort_order" placeholder="可为空">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>图片上传</span>
+                <input type="file" name="image_file" accept="image/*">
+              </label>
+              <label class="admin-field admin-field-wide">
+                <span>描述</span>
+                <textarea name="description" rows="8"></textarea>
+              </label>
+            </div>
+            <label class="admin-checkbox">
+              <input type="checkbox" name="is_published">
+              <span>立即发布</span>
+            </label>
+            <div class="admin-form-actions">
+              <button class="admin-primary-button" type="submit">保存</button>
+              <button class="admin-danger-button" id="deleteRecord" type="button">删除</button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin/gallery.js"></script>
+</body>
+</html>

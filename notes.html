@@ -5,64 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zoey | 碎碎念</title>
   <meta name="description" content="Zoey 的碎碎念页面，用来收纳随手记录、灵感笔记与短句片段。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="notes">
-  <div class="page-shell notes-shell">
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="回到首页">
-        <span class="brand-mark">Z</span>
-        <span class="brand-text">
-          <strong>Zoey</strong>
-          <em>notes & works</em>
-        </span>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
-    </header>
+  <div class="page-shell subpage-frame notes-shell">
+    <header class="topbar" aria-label="全站主导航"></header>
 
     <main class="subpage-main notes-page">
-      <section class="sub-hero whiteboard notes-hero">
-        <div class="notes-hero-copy">
-          <p class="section-label">Notes / Fragments / Signals</p>
-          <p class="lead">
-            在这里放一些来不及长成文章的念头。
-          </p>
-        </div>
+      <div class="subpage-system">
+        <aside class="subpage-sidebar-left">
+          <div class="subpage-rail-card">
+            <div class="subpage-rail-head notes-hero-copy">
+              <p class="section-label">NOTES / ARCHIVE</p>
+              <h1>碎碎念</h1>
+              <p>一些来不及长成文章的念头。</p>
+            </div>
 
-        <div class="notes-view-switch" role="tablist" aria-label="碎碎念视图切换">
-          <button class="view-toggle is-active" type="button" data-view-target="timeline" aria-pressed="true">
-            时间线视图
-          </button>
-          <button class="view-toggle" type="button" data-view-target="graph" aria-pressed="false">
-            关系图视图
-          </button>
-        </div>
-      </section>
+            <div class="notes-view-switch" role="tablist" aria-label="碎碎念视图切换">
+              <button class="view-toggle is-active" type="button" data-view-target="timeline" aria-pressed="true">时间线</button>
+              <button class="view-toggle" type="button" data-view-target="cards" aria-pressed="false">卡片</button>
+              <button class="view-toggle" type="button" data-view-target="graph" aria-pressed="false">关系</button>
+            </div>
 
-      <section class="notes-panel" data-view-panel="timeline">
-        <div class="notes-panel-head">
-          <p class="section-label">Timeline Archive</p>
-        </div>
-        <div id="notes-timeline" class="notes-timeline" aria-live="polite"></div>
-      </section>
+            <div class="notes-rail-section" data-notes-control="months">
+              <div class="notes-rail-section__head">
+                <p class="section-label">Months</p>
+                <button class="notes-filter-reset" type="button" data-filter-action="clear-month">全部</button>
+              </div>
+              <div id="notesMonthArchive" class="notes-month-archive" aria-label="月份归档"></div>
+            </div>
 
-      <section class="notes-panel is-hidden" data-view-panel="graph">
-        <div class="notes-panel-head">
-          <p class="section-label">Graph View</p>
-          <p class="notes-panel-desc">有什么想法，请记录下来吧。</p>
-        </div>
-        <div id="notes-graph" class="notes-graph" aria-live="polite"></div>
-      </section>
+            <div class="notes-rail-section" data-notes-control="tags">
+              <div class="notes-rail-section__head">
+                <p class="section-label">Tags</p>
+                <button class="notes-filter-reset" type="button" data-filter-action="clear-tag">全部</button>
+              </div>
+              <div id="notesTagFilters" class="notes-tag-filter-list" aria-label="标签筛选"></div>
+            </div>
+
+            <div class="notes-rail-section" data-notes-control="graph">
+              <div class="notes-rail-section__head">
+                <p class="section-label">Graph</p>
+                <button class="notes-filter-reset" type="button" data-filter-action="reset-graph">重置</button>
+              </div>
+              <div id="notesGraphControls" class="notes-graph-controls" aria-label="关系图控制"></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="subpage-content-main">
+          <section class="notes-panel is-active-panel" data-view-panel="timeline" aria-label="碎碎念时间线">
+            <div id="notesTimelineView" class="notes-view-root" aria-live="polite"></div>
+          </section>
+
+          <section class="notes-panel is-hidden" data-view-panel="cards" aria-label="碎碎念卡片流">
+            <div id="notesCardsView" class="notes-view-root" aria-live="polite"></div>
+          </section>
+
+          <section class="notes-panel is-hidden" data-view-panel="graph" aria-label="碎碎念关系图">
+            <div id="notesGraphView" class="notes-view-root" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <aside class="subpage-sidebar-right">
+          <div class="subpage-rail-stack">
+            <section id="notesDetailPanel" class="subpage-side-card notes-detail-panel" tabindex="-1" aria-live="polite">
+              <p class="section-label">Detail</p>
+              <h3>载入中</h3>
+              <p>正在整理碎碎念归档。</p>
+            </section>
+          </div>
+        </aside>
+      </div>
     </main>
   </div>
 
-  <script src="js/notes-data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pages/notes.js"></script>
 </body>
 </html>

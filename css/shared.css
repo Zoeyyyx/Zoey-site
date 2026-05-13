@@ -1,0 +1,148 @@
+﻿@font-face {
+  font-family: "FZPingXianYaSong";
+  src: url("../assets/fonts/方正屏显雅宋.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --color-bg: #fff7e8;
+  --color-paper: #fff3dd;
+  --color-text: #111111;
+  --color-muted: #6e6a60;
+  --color-line: #d8d0be;
+  --color-blue: #0027bb;
+  --color-yellow: #f2b705;
+  --color-yellow-soft: #ffd75a;
+  --color-yellow-pale: #fff1b8;
+  --color-ink: #111111;
+
+  --page-x: clamp(32px, 5vw, 88px);
+  --header-height: 88px;
+  --section-gap: 72px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --transition-fast: 180ms ease;
+  --transition-normal: 280ms ease;
+
+  --site-max: 1280px;
+  --site-wide-max: 1380px;
+  --page-pad-x: clamp(16px, 3vw, 32px);
+  --page-pad-y: clamp(14px, 2vw, 24px);
+  --block-gap: clamp(14px, 2vw, 24px);
+  --sidebar-gap: clamp(18px, 2.4vw, 28px);
+
+  --radius-lg: 24px;
+  --radius-shell: 20px;
+
+  --bg: #f5f0e8;
+  --bg-soft: #f8f4ee;
+  --board: #fbf8f1;
+  --card: rgba(255, 250, 244, 0.82);
+  --card-solid: #fdf8f1;
+  --card-strong: #f8f1e8;
+  --line: rgba(94, 79, 65, 0.16);
+  --line-strong: rgba(94, 79, 65, 0.24);
+  --shadow: 0 18px 45px rgba(58, 47, 37, 0.12);
+  --paper-shadow: 0 14px 28px rgba(76, 64, 53, 0.12);
+  --shadow-soft: 0 18px 36px rgba(60, 42, 24, 0.06);
+  --shadow-lift: 0 14px 24px rgba(60, 42, 24, 0.08);
+  --sand: #f4e4bf;
+  --blush: #f1d6cc;
+  --sage: #dce5d4;
+
+  --text: #241b14;
+  --ink: #2e2a26;
+  --text-soft: #6e655c;
+  --muted: #6e655c;
+  --text-faint: #8b8176;
+  --accent: #5f6654;
+  --accent-soft: rgba(95, 102, 84, 0.12);
+
+  --font-zh: "FZPingXianYaSong", "STSong", "Songti SC", serif;
+  --font-en: "Times New Roman", "Cormorant Garamond", serif;
+  --font-ui: "Manrope", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  --h1-size: clamp(2rem, 3.8vw, 3.4rem);
+  --h2-size: clamp(1.35rem, 2.2vw, 2rem);
+  --h3-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  --body-size: 16px;
+  --body-leading: 1.75;
+
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-fast: 160ms;
+  --motion-mid: 220ms;
+}
+
+html {
+  color-scheme: light;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.4), transparent 42%),
+    linear-gradient(180deg, #f8f4ee 0%, #f4efe7 100%);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--body-size);
+  line-height: var(--body-leading);
+}
+
+body[data-page="notes"] {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 36%),
+    linear-gradient(180deg, #14120f 0%, #1a1713 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+.brand strong,
+.page-titlebar h1,
+.page-titlebar h2 {
+  font-family: var(--font-en);
+  letter-spacing: 0.01em;
+}
+
+p,
+li,
+dd,
+dt,
+blockquote,
+input,
+textarea,
+button,
+label {
+  font-family: inherit;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition:
+    color var(--motion-fast) var(--ease-standard),
+    background-color var(--motion-fast) var(--ease-standard),
+    border-color var(--motion-fast) var(--ease-standard),
+    box-shadow var(--motion-mid) var(--ease-standard),
+    transform var(--motion-mid) var(--ease-standard),
+    opacity var(--motion-fast) var(--ease-standard);
+}
+
+::selection {
+  background: rgba(114, 123, 91, 0.18);
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

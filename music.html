@@ -7,54 +7,77 @@
   <meta name="description" content="Zoey 的音乐作品入口，包含单曲、Demo 与声音实验。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="music">
-  <div class="page-shell">
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="回到首页">
-        <span class="brand-mark">Z</span>
-        <span class="brand-text">
-          <strong>Zoey</strong>
-          <em>notes & works</em>
-        </span>
-      </a>
+  <div class="page-shell subpage-frame">
+    <header class="topbar" aria-label="全站主导航"></header>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
+    <main class="subpage-main music-page">
+      <div class="subpage-system">
+        <aside class="subpage-sidebar-left">
+          <div class="subpage-rail-card">
+            <div class="subpage-rail-head">
+              <p class="section-label">Music Archive</p>
+              <h1>音乐</h1>
+              <p>乐评、歌单与声音片段都固定进入中栏主内容区。</p>
+            </div>
 
-      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
-    </header>
+            <div class="subpage-side-chip-row">
+              <span class="subpage-side-chip">乐评</span>
+              <span class="subpage-side-chip">歌单</span>
+              <span class="subpage-side-chip">灵感</span>
+            </div>
+          </div>
+        </aside>
 
-    <main class="subpage-main">
-      <section class="sub-hero whiteboard">
-        <p class="section-label">Music Archive</p>
-        <p class="lead">这里可以继续接入真实音频、平台链接或作品详情。资源目录已预留在 `audio/`。</p>
-      </section>
+        <section class="subpage-content-main">
+          <section class="subpage-content-intro">
+            <p class="section-label">Music Frontpage</p>
+            <p>这里展示已发布的乐评与音乐条目。网易云内容只使用官方外链播放器，不解析真实音频地址。</p>
+          </section>
 
-      <section class="content-grid">
-        <article class="paper content-card">
-          <p class="section-label">Latest</p>
-          <h2>最新发布</h2>
-          <p>用来展示主打单曲、EP 或近期演出片段。</p>
-        </article>
-        <article class="paper content-card">
-          <p class="section-label">Demo</p>
-          <h2>样带与草稿</h2>
-          <p>适合放未公开片段、制作日志或创作过程。</p>
-        </article>
-        <article class="paper content-card">
-          <p class="section-label">Links</p>
-          <h2>平台入口</h2>
-          <p>可以补充网易云、Spotify、Apple Music、Bilibili 等外链。</p>
-        </article>
-      </section>
+          <section class="music-list" id="musicList" aria-live="polite">
+            <article class="paper content-card">
+              <p class="section-label">Music Archive</p>
+              <h2>正在读取</h2>
+              <p>乐评与音乐条目会在这里自动展示。</p>
+            </article>
+          </section>
+        </section>
+
+        <aside class="subpage-sidebar-right">
+          <div class="subpage-rail-stack">
+            <section class="subpage-side-card">
+              <p class="section-label">Published</p>
+              <h3 id="musicPublishedCount">0</h3>
+              <p>当前已发布音乐内容数量。</p>
+            </section>
+
+            <section class="subpage-side-card">
+              <p class="section-label">Playback</p>
+              <p>详情页使用网易云官方外链播放器；不可播放时显示跳转按钮。</p>
+            </section>
+
+            <section class="subpage-side-card">
+              <p class="section-label">Recent</p>
+              <div class="subpage-side-list" id="musicRecentList">
+                <span>
+                  <strong>等待载入</strong>
+                  <small>最新条目会显示在这里</small>
+                </span>
+              </div>
+            </section>
+          </div>
+        </aside>
+      </div>
     </main>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pages/music.js"></script>
 </body>
 </html>

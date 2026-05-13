@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>后台总览 | Zoey</title>
+  <meta name="description" content="Zoey Site 管理后台总览。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin" data-admin-page="dashboard">
+  <div class="page-shell page-shell-wide">
+    <header class="topbar admin-topbar">
+      <a class="brand" href="../index.html" aria-label="回到前台首页">
+        <span class="brand-mark">Z</span>
+        <span class="brand-text">
+          <strong>Zoey</strong>
+          <em>admin</em>
+        </span>
+      </a>
+      <nav class="nav admin-nav" id="admin-nav" aria-label="后台导航"></nav>
+      <div class="admin-topbar-actions">
+        <span class="admin-user-email" id="adminUserEmail"></span>
+        <button class="admin-secondary-button" id="adminSignOut" type="button">退出</button>
+      </div>
+    </header>
+
+    <main class="subpage-main admin-main">
+      <section class="page-titlebar">
+        <div>
+          <p class="section-label">Admin / Dashboard</p>
+          <h1>内容总览</h1>
+        </div>
+        <div class="admin-titlebar-actions">
+          <p class="lead">从这里快速查看四类内容和草稿数量，再进入对应管理页继续编辑。</p>
+          <button class="admin-secondary-button" id="musicReviewsNav" data-admin-view="music-reviews" type="button">乐评管理</button>
+        </div>
+      </section>
+
+      <p class="admin-notice" id="adminNotice" hidden></p>
+
+      <section class="admin-dashboard-grid admin-view" id="dashboardStats" data-admin-panel="dashboard" aria-live="polite"></section>
+
+      <section class="paper content-card admin-settings-card admin-view" id="musicReviewsView" data-admin-panel="music-reviews" hidden>
+        <div class="admin-settings-head">
+          <div>
+            <p class="section-label">Music Reviews</p>
+            <h2>乐评管理</h2>
+          </div>
+          <p>乐评编辑表单位于音乐管理页。点击下面按钮会进入乐评视图，不会影响其他后台页面。</p>
+        </div>
+        <div class="admin-form-actions">
+          <a class="admin-primary-button" id="openMusicReviewsPage" href="music.html?view=reviews">写入乐评</a>
+        </div>
+      </section>
+
+      <section class="paper content-card admin-settings-card admin-view" data-admin-panel="dashboard">
+        <div class="admin-settings-head">
+          <div>
+            <p class="section-label">Site Settings</p>
+            <h2>首页封面</h2>
+          </div>
+          <p>上传后会写入站点设置，首页 Hero 会优先读取这里的图片。</p>
+        </div>
+
+        <form class="admin-form" id="heroCoverForm">
+          <div class="admin-form-grid">
+            <label class="admin-field admin-field-wide">
+              <span>当前封面</span>
+              <div class="admin-hero-preview" id="heroCoverPreview">当前还没有后台封面，将回退到本地默认图。</div>
+            </label>
+
+            <label class="admin-field admin-field-wide">
+              <span>当前生效 URL</span>
+              <input id="heroCoverActiveUrl" type="text" readonly value="等待读取">
+            </label>
+
+            <label class="admin-field admin-field-wide" for="heroCoverFile">
+              <span>上传新封面</span>
+              <input id="heroCoverFile" name="heroCoverFile" type="file" accept="image/*">
+              <small class="admin-field-note">
+                建议上传横向大图，16:9 比例，主体尽量靠右，左侧预留文字空间。最佳尺寸 2400 × 1350 px，高清可用 3200 × 1800 px，最低 1920 × 1080 px。推荐 JPG 或 WebP，建议 ≤ 900KB，最大 ≤ 2MB。
+              </small>
+            </label>
+          </div>
+
+          <div class="admin-status-list" id="heroCoverStatusList" aria-live="polite"></div>
+
+          <div class="admin-form-actions">
+            <button class="admin-primary-button" id="heroCoverSubmit" type="submit">上传并应用</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin/dashboard.js"></script>
+</body>
+</html>

@@ -7,78 +7,71 @@
   <meta name="description" content="Zoey 的个人网站首页，收纳碎碎念、文章、音乐、视觉与工具。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="home">
-  <div class="home-transition" aria-hidden="true">
-    <span class="home-transition-main"></span>
-    <span class="home-transition-topglow"></span>
-    <span class="home-transition-edges"></span>
-  </div>
-  <div class="page-shell">
-    <header class="topbar home-topbar" aria-label="首页主入口">
-      <a class="brand" href="index.html" aria-label="回到首页">
-        <span class="brand-mark">Z</span>
-        <span class="brand-text">
-          <strong>Zoey</strong>
-          <em>notes & works</em>
-        </span>
-      </a>
+  <header class="topbar home-topbar" aria-label="全站主导航"></header>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
+  <main class="home-page">
+    <section class="home-hero hero" aria-label="Zoey 世界入口">
+      <img class="hero-cover hero-visual__image" id="homeHeroImage" alt="">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content hero-copy" id="homeHeroCopy"></div>
+    </section>
 
-      <nav class="nav" id="site-nav" aria-label="主导航"></nav>
-    </header>
-
-    <main class="home-main">
-      <h1 class="sr-only">Zoey 个人网站首页</h1>
-
-      <section class="home-hero" aria-label="首页主视觉">
-        <div class="home-thread" aria-hidden="true">
-          <svg class="home-thread-svg" viewBox="0 0 1200 620" preserveAspectRatio="none">
-            <g class="home-thread-ball">
-              <circle cx="156" cy="540" r="66"></circle>
-              <path d="M96 540c22-24 80-29 116 6"></path>
-              <path d="M90 565c28-20 88-24 128 10"></path>
-              <path d="M108 508c26-14 62-16 92 4"></path>
-              <path d="M118 586c26-10 60-6 92 14"></path>
-              <path d="M126 484c18-10 40-12 58-8c20 4 34 14 42 28"></path>
-              <path d="M120 524c18 8 34 8 52 2c20-6 38-6 58 4"></path>
-            </g>
-            <path
-              class="home-thread-line"
-              d="M220 566
-                 C 280 526, 330 498, 392 496
-                 S 506 530, 584 488
-                 S 708 386, 792 398
-                 S 914 470, 1000 420
-                 S 1090 320, 1156 330"
-            ></path>
-          </svg>
+    <div class="home-scroll-layer">
+      <section class="home-section recent">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-label">Recent Activity</p>
+            <h2>最近更新。</h2>
+          </div>
+          <div class="home-recent-stats" id="homeRecentStats" aria-label="站点内容统计"></div>
         </div>
-
-        <div class="home-title-block">
-          <p class="section-label">index / opening</p>
-          <h2 class="home-title" aria-label="Zoey，你在这里做甚？">
-            <span class="home-title-name">Zoey</span>
-            <span class="home-title-question">，你在这里做甚？</span>
-          </h2>
-        </div>
-
-        <div class="home-intro">
-          <p class="home-intro-text">
-            把一部分思绪、一部分影像、一部分声音先放在这里，
-            慢慢整理，慢慢继续。
-          </p>
-        </div>
+        <div class="home-recent-grid" id="homeRecentGrid" aria-live="polite"></div>
       </section>
-    </main>
-  </div>
 
-  <script src="js/main.js"></script>
+      <section class="home-section sections">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-label">Sections</p>
+            <h2>栏目精选</h2>
+          </div>
+          <p>按栏目继续浏览。</p>
+        </div>
+        <div class="home-browse-grid" id="homeBrowseGrid" aria-live="polite"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="home-footer" aria-label="页脚">
+    <div class="home-footer__inner">
+      <div class="home-footer__brand">
+        <strong>Zoey Site</strong>
+        <p>Notes, Works, Fragments</p>
+      </div>
+
+      <nav class="home-footer__nav" aria-label="Footer Navigation">
+        <p>Navigation</p>
+        <a href="notes.html">Notes</a>
+        <a href="writing.html">Writing</a>
+        <a href="music.html">Music</a>
+        <a href="gallery.html">Visual</a>
+        <a href="tools.html">Tools</a>
+      </nav>
+
+      <div class="home-footer__meta">
+        <p>Updated from Shanghai / Tokyo</p>
+        <p>© 2026 Zoey</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lib/runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pages/home.js"></script>
 </body>
 </html>

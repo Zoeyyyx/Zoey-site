@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" role="img" aria-label="Zoey home cover placeholder">
+  <defs>
+    <filter id="paperNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3" seed="21"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.12"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="0.55" stop-color="#f7f3e9"/>
+      <stop offset="1" stop-color="#e8ddca"/>
+    </linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111111"/>
+      <stop offset="0.72" stop-color="#161616"/>
+      <stop offset="1" stop-color="#0027bb"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#111111" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1800" height="1100" fill="url(#paper)"/>
+  <rect width="1800" height="1100" filter="url(#paperNoise)" opacity="0.7"/>
+
+  <g opacity="0.36">
+    <circle cx="124" cy="126" r="3" fill="#111111"/>
+    <circle cx="172" cy="204" r="2" fill="#dda000"/>
+    <circle cx="306" cy="156" r="2" fill="#0027bb"/>
+    <circle cx="1586" cy="168" r="3" fill="#0027bb"/>
+    <circle cx="1658" cy="258" r="2" fill="#dda000"/>
+    <circle cx="1512" cy="900" r="2" fill="#111111"/>
+    <circle cx="266" cy="884" r="2" fill="#dda000"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="590" y="178" width="820" height="570" rx="22" fill="#f7f3e9" stroke="#d9d2c2" stroke-width="3"/>
+    <rect x="642" y="230" width="716" height="466" rx="14" fill="url(#window)"/>
+    <rect x="706" y="296" width="250" height="156" rx="8" fill="#f7f3e9" opacity="0.78"/>
+    <rect x="990" y="296" width="282" height="156" rx="8" fill="#f7f3e9" opacity="0.28"/>
+    <rect x="706" y="488" width="250" height="142" rx="8" fill="#f7f3e9" opacity="0.22"/>
+    <rect x="990" y="488" width="282" height="142" rx="8" fill="#f7f3e9" opacity="0.52"/>
+  </g>
+
+  <g transform="translate(770 790)" filter="url(#softShadow)">
+    <rect width="430" height="170" rx="18" fill="#111111"/>
+    <rect x="34" y="34" width="362" height="72" rx="10" fill="#f7f3e9"/>
+    <circle cx="142" cy="70" r="32" fill="none" stroke="#0027bb" stroke-width="12"/>
+    <circle cx="288" cy="70" r="32" fill="none" stroke="#dda000" stroke-width="12"/>
+    <rect x="110" y="128" width="210" height="16" rx="8" fill="#666666"/>
+  </g>
+
+  <rect x="500" y="120" width="4" height="820" fill="#d9d2c2" opacity="0.7"/>
+  <rect x="1456" y="126" width="4" height="814" fill="#d9d2c2" opacity="0.48"/>
+  <path d="M0 1008 C268 950 520 976 782 1012 C1058 1050 1292 1024 1542 956 C1650 928 1734 928 1800 952 L1800 1100 L0 1100 Z" fill="#111111" opacity="0.045"/>
+</svg>

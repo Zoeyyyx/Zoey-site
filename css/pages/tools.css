@@ -1,0 +1,588 @@
+﻿.tool-home-page,
+.tool-detail-page {
+  gap: 20px;
+}
+
+.tool-card-page {
+  gap: 16px;
+}
+
+.tool-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tool-card {
+  display: grid;
+  gap: 14px;
+  padding: 26px 26px 24px;
+  border-radius: 28px;
+  color: var(--ink);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.tool-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tool-card h1,
+.tool-card h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.96;
+}
+
+.tool-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+.tool-card-state {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 76, 60, 0.1);
+  background: rgba(255, 255, 255, 0.76);
+  color: #5f5349;
+  font-size: 0.78rem;
+}
+
+.tool-card-primary {
+  min-height: 260px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 241, 233, 0.94)),
+    radial-gradient(circle at top right, rgba(242, 231, 210, 0.5), transparent 42%);
+}
+
+.tool-card-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(83, 68, 51, 0.1);
+}
+
+.tool-card-muted {
+  min-height: 220px;
+  background: rgba(250, 247, 241, 0.76);
+}
+
+.tool-card-muted:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(83, 68, 51, 0.06);
+}
+
+.tool-card-state-muted {
+  color: #85776a;
+  background: rgba(252, 249, 244, 0.82);
+}
+
+.tool-page-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 2px 0;
+}
+
+.tool-page-header h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 0.95;
+}
+
+.tool-page-header .lead {
+  margin: 8px 0 0;
+}
+
+.tool-home-hero h1,
+.tool-feature-card h2,
+.tool-intro-card h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 0.96;
+}
+
+.tool-feature-card,
+.tool-intro-card {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px 30px;
+  border-radius: 28px;
+}
+
+.tool-feature-copy,
+.tool-intro-card > div:first-child {
+  display: grid;
+  gap: 10px;
+  max-width: 42rem;
+}
+
+.tool-feature-copy p:last-of-type,
+.tool-intro-card p:last-of-type {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.82;
+}
+
+.tool-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 76, 60, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  color: #6c5f55;
+  font-size: 0.78rem;
+}
+
+.tool-feature-link,
+.tool-inline-link,
+.tool-back-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 76, 60, 0.12);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.tool-feature-link:hover,
+.tool-inline-link:hover,
+.tool-back-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(83, 68, 51, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.tool-entry-card {
+  display: grid;
+  gap: 12px;
+}
+
+.tool-inline-link {
+  justify-self: start;
+}
+
+.tool-page-shell {
+  max-width: 1380px;
+}
+
+.doremi-host {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+body[data-page="tools-doremi"] .doremi-page {
+  color: #2f2a26;
+}
+
+body[data-page="tools-doremi"] .page {
+  padding: 0;
+}
+
+body[data-page="tools-doremi"] .shell {
+  max-width: 100%;
+  margin: 0;
+  gap: 18px;
+}
+
+body[data-page="tools-doremi"] .shell.portal-shell {
+  max-width: none;
+}
+
+body[data-page="tools-doremi"] .tool-detail-page {
+  gap: 10px;
+}
+
+body[data-page="tools-doremi"] .tool-page-header {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  min-height: auto;
+  padding: 0;
+}
+
+body[data-page="tools-doremi"] .tool-page-title-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: inherit;
+}
+
+body[data-page="tools-doremi"] .tool-page-title-link:hover h1 {
+  color: #5a4a3c;
+}
+
+body[data-page="tools-doremi"] .card {
+  border: 1px solid rgba(92, 76, 60, 0.1);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 245, 238, 0.92));
+  box-shadow: 0 14px 30px rgba(83, 68, 51, 0.07);
+}
+
+body[data-page="tools-doremi"] .card-body {
+  padding: 18px;
+}
+
+body[data-page="tools-doremi"][data-doremi-view="staff"] .tool-page-header,
+body[data-page="tools-doremi"][data-doremi-view="ear"] .tool-page-header {
+  align-items: center;
+  gap: 0;
+}
+
+body[data-page="tools-doremi"][data-doremi-view="staff"] .tool-page-header h1,
+body[data-page="tools-doremi"][data-doremi-view="ear"] .tool-page-header h1 {
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+}
+
+body[data-page="tools-doremi"] .hero,
+body[data-page="tools-doremi"] .ear-info,
+body[data-page="tools-doremi"] .option-group {
+  border-color: rgba(92, 76, 60, 0.1);
+  background: linear-gradient(180deg, rgba(252, 249, 244, 0.94), rgba(243, 237, 227, 0.92));
+}
+
+body[data-page="tools-doremi"] .btn,
+body[data-page="tools-doremi"] .seg-btn,
+body[data-page="tools-doremi"] .select,
+body[data-page="tools-doremi"] .ans-btn {
+  border-color: rgba(92, 76, 60, 0.12);
+  border-radius: 14px;
+}
+
+body[data-page="tools-doremi"] .btn.primary,
+body[data-page="tools-doremi"] .seg-btn.active {
+  background: #3f352d;
+  border-color: #3f352d;
+  color: #fff;
+}
+
+body[data-page="tools-doremi"] .muted,
+body[data-page="tools-doremi"] .entry-text,
+body[data-page="tools-doremi"] .intro-block,
+body[data-page="tools-doremi"] .inline-note {
+  color: #72665c;
+}
+
+body[data-page="tools-doremi"] .feedback-ok,
+body[data-page="tools-doremi"] .feedback-bad,
+body[data-page="tools-doremi"] .stat,
+body[data-page="tools-doremi"] .hero-chip,
+body[data-page="tools-doremi"] .badge {
+  border-color: rgba(92, 76, 60, 0.1);
+}
+
+body[data-page="tools-doremi"] .home-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body[data-page="tools-doremi"] .entry-card {
+  min-height: 220px;
+}
+
+body[data-page="tools-doremi"] .doremi-home-intro {
+  border-radius: 28px;
+}
+
+body[data-page="tools-doremi"] .doremi-home-intro .card-body {
+  padding: 22px;
+}
+
+body[data-page="tools-doremi"] .doremi-home-stack {
+  gap: 0;
+}
+
+body[data-page="tools-doremi"] .doremi-entry {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 240, 231, 0.9)),
+    radial-gradient(circle at top right, rgba(241, 228, 205, 0.38), transparent 42%);
+  border-color: rgba(92, 76, 60, 0.1);
+  gap: 12px;
+}
+
+body[data-page="tools-doremi"] .doremi-entry-primary {
+  box-shadow: 0 16px 28px rgba(83, 68, 51, 0.08);
+}
+
+body[data-page="tools-doremi"] .entry-big {
+  font-size: 2.6rem;
+  line-height: 1;
+  color: #5d4c3f;
+}
+
+body[data-page="tools-doremi"] .doremi-home-intro .section-label {
+  margin: 0;
+}
+
+body[data-page="tools-doremi"] .doremi-home-intro .title {
+  margin-top: -2px;
+}
+
+body[data-page="tools-doremi"] .doremi-home-intro .intro-block {
+  max-width: 46rem;
+}
+
+body[data-page="tools-doremi"] .doremi-entry .btn {
+  min-width: 9rem;
+}
+
+body[data-page="tools-doremi"] .tool-minihead {
+  align-items: center;
+  gap: 8px;
+}
+
+body[data-page="tools-doremi"] .tool-minihead .row {
+  gap: 8px;
+}
+
+body[data-page="tools-doremi"] .tool-minihead-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+body[data-page="tools-doremi"] .doremi-focus-page {
+  gap: 10px;
+}
+
+body[data-page="tools-doremi"] .doremi-work-grid {
+  gap: 14px;
+}
+
+body[data-page="tools-doremi"] .doremi-control-hero {
+  min-height: auto;
+  padding: 12px 14px;
+  gap: 12px;
+}
+
+body[data-page="tools-doremi"] .doremi-control-hero .stack {
+  gap: 10px;
+}
+
+body[data-page="tools-doremi"] .doremi-control-hero .pill-row {
+  gap: 6px;
+}
+
+body[data-page="tools-doremi"] .doremi-control-hero .hero-chip {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 0.78rem;
+}
+
+body[data-page="tools-doremi"] .doremi-control-hero .hero-title {
+  font-size: 1.35rem;
+}
+
+body[data-page="tools-doremi"] .doremi-staff-frame {
+  height: min(74vh, 860px);
+}
+
+body[data-page="tools-doremi"] .doremi-secondary-note {
+  margin-top: 2px;
+}
+
+body[data-page="tools-doremi"] .doremi-launch-shell {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+}
+
+body[data-page="tools-doremi"] .doremi-launch-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+body[data-page="tools-doremi"] .doremi-launch-head h2 {
+  margin: 4px 0 0;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+body[data-page="tools-doremi"] .doremi-launch-copy {
+  margin: 0;
+  max-width: 32rem;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+body[data-page="tools-doremi"] .doremi-app-frame {
+  height: min(80vh, 960px);
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+body[data-page="tools-doremi"] .doremi-hub-page {
+  gap: 18px;
+}
+
+body[data-page="tools-doremi"] .doremi-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body[data-page="tools-doremi"] .doremi-hub-card {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 28px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+body[data-page="tools-doremi"] .doremi-hub-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(83, 68, 51, 0.08);
+  border-color: rgba(92, 76, 60, 0.14);
+}
+
+body[data-page="tools-doremi"] .doremi-hub-card-primary {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 240, 231, 0.9)),
+    radial-gradient(circle at top right, rgba(241, 228, 205, 0.36), transparent 42%);
+}
+
+body[data-page="tools-doremi"] .doremi-hub-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+body[data-page="tools-doremi"] .doremi-hub-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 76, 60, 0.12);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+body[data-page="tools-doremi"] .doremi-hub-card h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+body[data-page="tools-doremi"] .doremi-hub-card p:last-child {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+body[data-page="tools-doremi"] .doremi-app-page {
+  gap: 14px;
+}
+
+body[data-page="tools-doremi"] .doremi-app-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+body[data-page="tools-doremi"] .doremi-app-heading {
+  display: grid;
+  gap: 6px;
+}
+
+body[data-page="tools-doremi"] .doremi-app-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body[data-page="tools-doremi"] .doremi-app-switch a {
+  min-height: 38px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 76, 60, 0.12);
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--muted);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+body[data-page="tools-doremi"] .doremi-app-switch a:hover,
+body[data-page="tools-doremi"] .doremi-app-switch a.is-active {
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--ink);
+  box-shadow: 0 10px 22px rgba(90, 78, 64, 0.08);
+  transform: translateY(-1px);
+}
+
+body[data-page="tools-doremi"] .title,
+body[data-page="tools-doremi"] .entry-title,
+body[data-page="tools-doremi"] .hero-title {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+@media (max-width: 900px) {
+  body[data-page="tools-doremi"] .tool-minihead {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  body[data-page="tools-doremi"] .doremi-launch-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body[data-page="tools-doremi"] .doremi-hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="tools-doremi"] .doremi-app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body[data-page="tools-doremi"] .tool-minihead .row {
+    width: 100%;
+  }
+
+  body[data-page="tools-doremi"] .doremi-staff-frame {
+    height: min(70vh, 720px);
+  }
+
+  body[data-page="tools-doremi"] .doremi-app-frame {
+    height: min(74vh, 760px);
+  }
+}
