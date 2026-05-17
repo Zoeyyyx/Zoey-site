@@ -10,6 +10,10 @@ const graphControlsRoot = document.querySelector("#notesGraphControls");
 const detailPanel = document.querySelector("#notesDetailPanel");
 const toggleButtons = document.querySelectorAll(".view-toggle");
 const panels = document.querySelectorAll("[data-view-panel]");
+let noteModalRoot;
+let lastModalTrigger = null;
+
+const TEMP_TITLE_LENGTH = 18;
 
 const VIEW_LABELS = {
   timeline: "时间线",
@@ -52,6 +56,7 @@ const state = {
   notes: [],
   selectedMonth: "",
   selectedTag: "",
+  searchQuery: "",
   selectedNoteId: "",
   selectedNodeId: "",
   graphMode: "relation",
@@ -126,8 +131,12 @@ function inferLength(content) {
   return "long";
 }
 
-function buildTitle(note, excerpt) {
-  return note.title || plainTextExcerpt(excerpt, 16) || "未命名碎片";
+function buildTemporaryTitle(content) {
+  return plainTextExcerpt(content, TEMP_TITLE_LENGTH) || "未命名碎片";
+}
+
+function buildTitle(note, content) {
+  return note.title || buildTemporaryTitle(content);
 }
 
 function getTagTone(tag) {
@@ -149,11 +158,13 @@ function normalizeNotes(rawNotes) {
       const tags = rawTags.length ? rawTags : [note.tag || inferTag(note)];
       const content = String(note.content || "");
       const excerpt = plainTextExcerpt(content, 136);
+      const hasOriginalTitle = Boolean(String(note.title || "").trim());
       const title = buildTitle(note, content);
 
       return {
         id: note.id || `note-${date.getTime()}-${index}`,
         title,
+        hasOriginalTitle,
         date: parts.date,
         time: parts.time,
         datetime: parts.datetime,
@@ -239,14 +250,20 @@ function noteMatchesTopic(note, topic) {
 function getFilteredNotes(view = state.activeView) {
   let notes = [...state.notes];
 
-  if (view !== "timeline") {
-    if (state.selectedMonth) {
-      notes = notes.filter((note) => note.monthKey === state.selectedMonth);
-    }
+  if (state.selectedMonth) {
+    notes = notes.filter((note) => note.monthKey === state.selectedMonth);
+  }
 
-    if (state.selectedTag) {
-      notes = notes.filter((note) => note.tags.includes(state.selectedTag));
-    }
+  if (state.selectedTag) {
+    notes = notes.filter((note) => note.tags.includes(state.selectedTag));
+  }
+
+  const keyword = state.searchQuery.trim().toLowerCase();
+  if (keyword) {
+    notes = notes.filter((note) => {
+      const haystack = `${note.title} ${note.content} ${note.datetime} ${note.tags.join(" ")}`.toLowerCase();
+      return haystack.includes(keyword);
+    });
   }
 
   if (view === "graph") {
@@ -297,6 +314,172 @@ function renderSourceBadge(note) {
 
 function renderEmptyState(message) {
   return `<p class="notes-empty">${escapeHtml(message)}</p>`;
+}
+
+function renderNoteParagraphs(note) {
+  return String(note?.content || "")
+    .split(/\n{2,}/)
+    .filter(Boolean)
+    .map((paragraph) => `<p>${escapeHtml(paragraph).replaceAll("\n", "<br>")}</p>`)
+    .join("");
+}
+
+function findNoteById(noteId) {
+  return state.notes.find((note) => note.id === noteId) || null;
+}
+
+function ensureNoteModal() {
+  if (noteModalRoot) {
+    return noteModalRoot;
+  }
+
+  noteModalRoot = document.createElement("div");
+  noteModalRoot.className = "notes-modal";
+  noteModalRoot.setAttribute("hidden", "");
+  noteModalRoot.innerHTML = `
+    <div class="notes-modal__backdrop" data-notes-modal-close></div>
+    <section class="notes-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="notesModalTitle" tabindex="-1">
+      <button class="notes-modal__close" type="button" data-notes-modal-close aria-label="关闭全文">×</button>
+      <div class="notes-modal__content" id="notesModalContent"></div>
+    </section>
+  `;
+  document.body.append(noteModalRoot);
+
+  noteModalRoot.addEventListener("click", (event) => {
+    if (event.target.closest("[data-notes-modal-close]")) {
+      closeNoteModal();
+    }
+  });
+
+  noteModalRoot.addEventListener("wheel", (event) => {
+    if (event.target.closest(".notes-modal__body")) {
+      return;
+    }
+
+    event.preventDefault();
+  }, { passive: false });
+
+  return noteModalRoot;
+}
+
+function openNoteModal(noteId) {
+  const note = findNoteById(noteId);
+
+  if (!note) {
+    return;
+  }
+
+  const modal = ensureNoteModal();
+  const content = modal.querySelector("#notesModalContent");
+  const dialog = modal.querySelector(".notes-modal__dialog");
+  lastModalTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+  content.innerHTML = `
+    <header class="notes-modal__header">
+      <p class="section-label notes-modal__kicker">Full Note</p>
+      <h2 class="notes-modal__title" id="notesModalTitle">${escapeHtml(note.title)}</h2>
+      <div class="notes-modal__info">
+        <p class="notes-modal__meta">
+          <span>${escapeHtml(note.datetime)}</span>
+          <span class="notes-modal__meta-extra">${renderSourceBadge(note)}</span>
+        </p>
+        <div class="notes-modal__tags">${renderTags(note.tags)}</div>
+      </div>
+    </header>
+    <div class="notes-modal__body">
+      ${renderNoteParagraphs(note)}
+    </div>
+  `;
+
+  const body = content.querySelector(".notes-modal__body");
+  let bounceTimer = 0;
+  const isBodyScrollable = () => Boolean(body && body.scrollHeight - body.clientHeight > 4);
+  const pulseBodyFeedback = (direction = "down") => {
+    if (!body) {
+      return;
+    }
+
+    modal.classList.remove("notes-modal--body-bounce-up", "notes-modal--body-bounce-down");
+    window.clearTimeout(bounceTimer);
+    window.requestAnimationFrame(() => {
+      modal.classList.add(direction === "up" ? "notes-modal--body-bounce-up" : "notes-modal--body-bounce-down");
+      bounceTimer = window.setTimeout(() => {
+        modal.classList.remove("notes-modal--body-bounce-up", "notes-modal--body-bounce-down");
+      }, 360);
+    });
+  };
+  const collapseModalHeader = () => {
+    if (!isBodyScrollable()) {
+      return;
+    }
+
+    modal.classList.add("notes-modal--scrolled");
+  };
+
+  modal.classList.remove("notes-modal--scrolled", "notes-modal--can-collapse");
+  if (body) {
+    body.scrollTop = 0;
+    body.onwheel = (event) => {
+      const canScroll = isBodyScrollable();
+      const atTop = body.scrollTop <= 0;
+      const atBottom = body.scrollTop + body.clientHeight >= body.scrollHeight - 2;
+
+      if (canScroll && !((event.deltaY < 0 && atTop) || (event.deltaY > 0 && atBottom))) {
+        return;
+      }
+
+      pulseBodyFeedback(event.deltaY < 0 ? "up" : "down");
+      event.preventDefault();
+    };
+    body.addEventListener("scroll", () => {
+      if (body.scrollTop > 0) {
+        collapseModalHeader();
+      }
+    });
+  }
+
+  if (dialog) {
+    dialog.onwheel = (event) => {
+      const bodyIsEventTarget = event.target.closest(".notes-modal__body");
+
+      if (bodyIsEventTarget) {
+        return;
+      }
+
+      if (!modal.classList.contains("notes-modal--can-collapse")) {
+        pulseBodyFeedback(event.deltaY < 0 ? "up" : "down");
+        event.preventDefault();
+        return;
+      }
+
+      if (event.deltaY <= 0 || modal.classList.contains("notes-modal--scrolled")) {
+        return;
+      }
+
+      collapseModalHeader();
+      event.preventDefault();
+    };
+  }
+
+  modal.removeAttribute("hidden");
+  document.body.classList.add("notes-modal-open");
+  window.requestAnimationFrame(() => {
+    const canScroll = isBodyScrollable();
+    modal.classList.toggle("notes-modal--can-collapse", canScroll);
+    modal.classList.toggle("notes-modal--no-scroll", !canScroll);
+    dialog?.focus();
+  });
+}
+
+function closeNoteModal() {
+  if (!noteModalRoot) {
+    return;
+  }
+
+  noteModalRoot.setAttribute("hidden", "");
+  document.body.classList.remove("notes-modal-open");
+  lastModalTrigger?.focus?.();
+  lastModalTrigger = null;
 }
 
 function updateViewChrome() {
@@ -387,7 +570,14 @@ function renderTimeline() {
     return;
   }
 
-  const groups = state.notes.reduce((accumulator, note) => {
+  const notes = getFilteredNotes("timeline");
+
+  if (!notes.length) {
+    timelineRoot.innerHTML = renderEmptyState(state.searchQuery || state.selectedTag || state.selectedMonth ? "当前筛选下没有碎碎念。" : "还没有已发布的碎碎念。");
+    return;
+  }
+
+  const groups = notes.reduce((accumulator, note) => {
     if (!accumulator.has(note.monthKey)) {
       accumulator.set(note.monthKey, {
         label: note.monthLabel,
@@ -399,18 +589,7 @@ function renderTimeline() {
     return accumulator;
   }, new Map());
 
-  const selectedMonthLabel = state.selectedMonth
-    ? groups.get(state.selectedMonth)?.label || state.notes[0].monthLabel
-    : state.notes[0].monthLabel;
-
   timelineRoot.innerHTML = `
-    <header class="notes-view-head">
-      <div>
-        <p class="section-label">Timeline Archive</p>
-        <h2>${escapeHtml(selectedMonthLabel)}</h2>
-      </div>
-      <p>按时间收束的短句、念头和片段。</p>
-    </header>
     <div class="notes-timeline">
       ${[...groups.entries()]
         .map(
@@ -424,7 +603,7 @@ function renderTimeline() {
                 ${group.notes
                   .map((note, index) => {
                     const isSelected = state.selectedNoteId === note.id;
-                    const isExpanded = isSelected || (!state.selectedNoteId && index === 0 && monthKey === state.notes[0].monthKey);
+                    const isExpanded = isSelected || (!state.selectedNoteId && index === 0 && monthKey === notes[0].monthKey);
                     const noteNumber = group.notes.length - index;
 
                     return `
@@ -462,19 +641,8 @@ function renderCards() {
   }
 
   const notes = getFilteredNotes("cards");
-  const status = [
-    state.selectedMonth ? getMonthStats().find((month) => month.key === state.selectedMonth)?.label : "",
-    state.selectedTag
-  ].filter(Boolean);
 
   cardsRoot.innerHTML = `
-    <header class="notes-view-head">
-      <div>
-        <p class="section-label">Card Flow</p>
-        <h2>${status.length ? escapeHtml(status.join(" · ")) : "全部卡片"}</h2>
-      </div>
-      <p>${notes.length} 条可见记录。</p>
-    </header>
     ${
       notes.length
         ? `<div class="notes-card-masonry">
@@ -707,8 +875,24 @@ function renderGraph() {
 
 function getFilterSummary() {
   const month = state.selectedMonth ? getMonthStats().find((item) => item.key === state.selectedMonth)?.label : "";
-  const filters = [month, state.selectedTag, state.graphFilter !== "all" && state.activeView === "graph" ? GRAPH_FILTERS.find((item) => item.id === state.graphFilter)?.label : ""].filter(Boolean);
+  const filters = [
+    month,
+    state.selectedTag,
+    state.searchQuery.trim() ? `搜索：${state.searchQuery.trim()}` : "",
+    state.graphFilter !== "all" && state.activeView === "graph" ? GRAPH_FILTERS.find((item) => item.id === state.graphFilter)?.label : ""
+  ].filter(Boolean);
   return filters.length ? filters.join(" · ") : "全部内容";
+}
+
+function getNoteStats() {
+  const latest = state.notes[0];
+  const currentMonth = getLatestMonth();
+  const totalWords = state.notes.reduce((total, note) => total + stripHtml(note.content).length, 0);
+
+  return [
+    ["总条数", state.notes.length],
+    ["估算字数", totalWords >= 10000 ? `${Math.round(totalWords / 1000)}k` : totalWords]
+  ];
 }
 
 function getRelatedNotes(note) {
@@ -723,76 +907,65 @@ function renderDetailPanel() {
     return;
   }
 
-  const selectedNote = state.notes.find((note) => note.id === state.selectedNoteId);
-
-  if (selectedNote) {
-    const relatedNotes = getRelatedNotes(selectedNote);
-    detailPanel.innerHTML = `
-      <p class="section-label">Selected Note</p>
-      <h3>${escapeHtml(selectedNote.title)}</h3>
-      <p class="notes-detail-meta">${escapeHtml(selectedNote.datetime)}</p>
-      ${renderSourceBadge(selectedNote)}
-      <div class="notes-detail-tags">${renderTags(selectedNote.tags)}</div>
-      <div class="notes-detail-content">
-        ${String(selectedNote.content || "")
-          .split(/\n{2,}/)
-          .filter(Boolean)
-          .map((paragraph) => `<p>${escapeHtml(paragraph).replaceAll("\n", "<br>")}</p>`)
-          .join("")}
-      </div>
-      ${
-        relatedNotes.length
-          ? `<div class="notes-detail-related">
-              <strong>相关笔记</strong>
-              ${relatedNotes.map((note) => `<button type="button" data-detail-note="${escapeHtml(note.id)}">${escapeHtml(note.title)}</button>`).join("")}
-            </div>`
-          : ""
-      }
-      <div class="notes-detail-actions">
-        ${selectedNote.sourceUrl ? `<a href="${escapeHtml(selectedNote.sourceUrl)}" target="_blank" rel="noreferrer">查看来源</a>` : ""}
-        <button type="button" data-detail-action="locate">定位到时间线</button>
-        <button type="button" data-detail-action="clear">清除选择</button>
-      </div>
-    `;
-    return;
-  }
-
-  if (state.selectedNodeId) {
-    const isTag = state.selectedNodeId.startsWith("tag:");
-    const topic = TOPIC_RULES.find((item) => item.id === state.selectedNodeId);
-    const title = isTag ? state.selectedNodeId.replace(/^tag:/, "") : topic?.label || "关系节点";
-    const relatedNotes = isTag
-      ? state.notes.filter((note) => note.tags.includes(title)).slice(0, 5)
-      : state.notes.filter((note) => topic && noteMatchesTopic(note, topic)).slice(0, 5);
-
-    detailPanel.innerHTML = `
-      <p class="section-label">Selected Node</p>
-      <h3>${escapeHtml(title)}</h3>
-      <p class="notes-detail-meta">${isTag ? "标签节点" : "主题节点"} · ${relatedNotes.length} 条记录</p>
-      <div class="notes-detail-related">
-        <strong>相关笔记</strong>
-        ${
-          relatedNotes.length
-            ? relatedNotes.map((note) => `<button type="button" data-detail-note="${escapeHtml(note.id)}">${escapeHtml(note.title)}</button>`).join("")
-            : "<span>暂无关联笔记</span>"
-        }
-      </div>
-      <div class="notes-detail-actions">
-        <button type="button" data-detail-action="clear">清除选择</button>
-      </div>
-    `;
-    return;
-  }
+  const visibleNotes = getFilteredNotes(state.activeView);
+  const tagStats = getTagStats();
+  const noteStats = getNoteStats();
 
   detailPanel.innerHTML = `
-    <p class="section-label">${escapeHtml(VIEW_LABELS[state.activeView])} View</p>
-    <h3>${state.notes.length}</h3>
-    <p class="notes-detail-meta">已发布碎碎念</p>
-    <div class="notes-detail-stat">
-      <span>当前筛选</span>
-      <strong>${escapeHtml(getFilterSummary())}</strong>
+    <div class="notes-control-panel">
+      <header class="notes-control-panel__head">
+        <p class="section-label">FILTER</p>
+        <strong data-visible-count>${visibleNotes.length}</strong>
+      </header>
+
+      <label class="notes-search-field">
+        <span>关键词搜索</span>
+        <input type="search" value="${escapeHtml(state.searchQuery)}" placeholder="搜索内容、标题或日期" data-notes-search>
+      </label>
+
+      <section class="notes-category-box" aria-label="标签分类筛选">
+        <div class="notes-category-box__head">
+          <span>标签分类</span>
+          <button type="button" data-detail-action="clear-filters">清空</button>
+        </div>
+        <div class="notes-category-list">
+          <button class="notes-category-item${state.selectedTag ? "" : " is-active"}" type="button" data-detail-tag="">
+            <span>全部</span>
+            <small>${state.notes.length}</small>
+          </button>
+          ${tagStats
+            .map(
+              ({ tag, count }) => `
+                <button class="notes-category-item${state.selectedTag === tag ? " is-active" : ""}" type="button" data-detail-tag="${escapeHtml(tag)}">
+                  <span>${escapeHtml(tag)}</span>
+                  <small>${count}</small>
+                </button>
+              `
+            )
+            .join("")}
+        </div>
+      </section>
+
+      <section class="notes-stats-box" aria-label="碎碎念数据概览">
+        <div class="notes-stats-box__head">
+          <span>数据概览</span>
+          <small aria-hidden="true">↗</small>
+        </div>
+        <div class="notes-stats-list">
+          ${noteStats
+            .map(
+              ([label, value]) => `
+                <div class="notes-stat-row">
+                  <span>${escapeHtml(label)}</span>
+                  <strong>${escapeHtml(String(value))}</strong>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
+      </section>
+
     </div>
-    <p>选择一条笔记或关系节点后，这里显示正文、标签和相关内容。</p>
   `;
 }
 
@@ -840,7 +1013,7 @@ function setActiveView(view) {
 }
 
 function handleMonthClick(monthKey) {
-  state.selectedMonth = state.selectedMonth === monthKey && state.activeView !== "timeline" ? "" : monthKey;
+  state.selectedMonth = state.selectedMonth === monthKey ? "" : monthKey;
 
   if (state.activeView === "timeline") {
     renderAll();
@@ -855,7 +1028,7 @@ function handleMonthClick(monthKey) {
 }
 
 function moveSelection(direction) {
-  const notes = state.activeView === "timeline" ? state.notes : getFilteredNotes(state.activeView);
+  const notes = getFilteredNotes(state.activeView);
 
   if (!notes.length) {
     return;
@@ -949,6 +1122,7 @@ function initEvents() {
     const entry = event.target.closest("[data-note-id]");
     if (entry) {
       selectNote(entry.dataset.noteId);
+      openNoteModal(entry.dataset.noteId);
     }
   });
 
@@ -956,6 +1130,7 @@ function initEvents() {
     const card = event.target.closest("[data-note-id]");
     if (card) {
       selectNote(card.dataset.noteId);
+      openNoteModal(card.dataset.noteId);
     }
   });
 
@@ -991,29 +1166,49 @@ function initEvents() {
   });
 
   detailPanel?.addEventListener("click", (event) => {
-    const relatedNote = event.target.closest("[data-detail-note]");
+    const tagButton = event.target.closest("[data-detail-tag]");
     const action = event.target.closest("[data-detail-action]");
 
-    if (relatedNote) {
-      selectNote(relatedNote.dataset.detailNote, state.activeView === "timeline");
+    if (tagButton) {
+      state.selectedTag = state.selectedTag === tagButton.dataset.detailTag ? "" : tagButton.dataset.detailTag;
+      state.selectedNoteId = "";
+      state.selectedNodeId = "";
+      renderAll();
+      return;
     }
 
     if (!action) {
       return;
     }
 
-    if (action.dataset.detailAction === "clear") {
+    if (action.dataset.detailAction === "clear-filters") {
+      state.searchQuery = "";
+      state.selectedTag = "";
+      state.selectedMonth = "";
+      state.graphFilter = "all";
       state.selectedNoteId = "";
       state.selectedNodeId = "";
       renderAll();
     }
+  });
 
-    if (action.dataset.detailAction === "locate" && state.selectedNoteId) {
-      const note = state.notes.find((item) => item.id === state.selectedNoteId);
-      state.activeView = "timeline";
-      state.selectedMonth = note?.monthKey || "";
-      renderAll();
-      scrollToSelectedNote();
+  detailPanel?.addEventListener("input", (event) => {
+    const searchInput = event.target.closest("[data-notes-search]");
+
+    if (!searchInput) {
+      return;
+    }
+
+    state.searchQuery = searchInput.value;
+    state.selectedNoteId = "";
+    state.selectedNodeId = "";
+    renderSidebarControls();
+    renderTimeline();
+    renderCards();
+    renderGraph();
+    const visibleCount = detailPanel.querySelector("[data-visible-count]");
+    if (visibleCount) {
+      visibleCount.textContent = String(getFilteredNotes(state.activeView).length);
     }
   });
 
@@ -1034,7 +1229,12 @@ function initEvents() {
     }
 
     if (event.key === "Enter" && state.selectedNoteId) {
-      detailPanel?.focus();
+      event.preventDefault();
+      openNoteModal(state.selectedNoteId);
+    }
+
+    if (event.key === "Escape") {
+      closeNoteModal();
     }
   });
 }

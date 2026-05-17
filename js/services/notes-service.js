@@ -1,6 +1,8 @@
 import { getSupabaseClient } from "../lib/supabase-client.js";
+import { plainTextExcerpt, stripHtml } from "../lib/utils.js";
 
 const TABLE = "notes";
+const TEMP_TITLE_LENGTH = 18;
 const ORDER_QUERY = [
   { column: "publish_date", options: { ascending: false } },
   { column: "created_at", options: { ascending: false } }
@@ -24,6 +26,55 @@ function normalizeNotePayload(payload) {
     is_published: Boolean(payload.is_published),
     order_index: payload.order_index === "" || payload.order_index == null ? null : Number(payload.order_index)
   };
+}
+
+function buildTemporaryTitle(content) {
+  return plainTextExcerpt(content, TEMP_TITLE_LENGTH) || "未命名碎片";
+}
+
+function cleanGeneratedTitle(value = "") {
+  return String(value || "")
+    .replace(/^["“”'《「『]+|["“”'》」』]+$/g, "")
+    .replace(/^标题[:：]\s*/i, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 18);
+}
+
+async function completeMissingTitle(payload) {
+  if (payload.title || !payload.content) {
+    return payload;
+  }
+
+  const supabase = getSupabaseClient();
+  const fallbackTitle = buildTemporaryTitle(payload.content);
+
+  try {
+    const config = window.__ZOEY_SITE_CONFIG__ || {};
+    const functionName = config.DEEPSEEK_TITLE_FUNCTION || "generate-note-title";
+    const model = config.DEEPSEEK_TITLE_MODEL || "deepseek-chat";
+    const { data, error } = await supabase.functions.invoke(functionName, {
+      body: {
+        content: stripHtml(payload.content).slice(0, 1000),
+        model
+      }
+    });
+
+    if (error) {
+      throw error;
+    }
+
+    const generatedTitle = cleanGeneratedTitle(data?.title);
+    return {
+      ...payload,
+      title: generatedTitle || fallbackTitle
+    };
+  } catch (error) {
+    return {
+      ...payload,
+      title: fallbackTitle
+    };
+  }
 }
 
 export async function listPublishedNotes() {
@@ -50,7 +101,7 @@ export async function listAdminNotes() {
 
 export async function saveNote(payload) {
   const supabase = getSupabaseClient();
-  const normalized = normalizeNotePayload(payload);
+  const normalized = await completeMissingTitle(normalizeNotePayload(payload));
 
   if (normalized.id) {
     const { data, error } = await supabase

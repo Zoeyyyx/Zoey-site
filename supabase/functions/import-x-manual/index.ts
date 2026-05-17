@@ -11,6 +11,8 @@ type ImportPayload = {
 };
 
 const NOTES_TABLE = "notes";
+const DEFAULT_TITLE_API_URL = "https://models.sjtu.edu.cn/api/v1/chat/completions";
+const DEFAULT_TITLE_MODEL = "deepseek-chat";
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -57,6 +59,65 @@ function getTitle(content: string, providedTitle = "") {
 
   const firstLine = removeUrls(content).split(/\n/).find(Boolean) || "";
   return firstLine.slice(0, 24).trim() || "未命名片段";
+}
+
+function cleanGeneratedTitle(value = "") {
+  return String(value)
+    .replace(/^["“”'《「『]+|["“”'》」』]+$/g, "")
+    .replace(/^标题[:：]\s*/i, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 10);
+}
+
+async function generateSmartTitle(content: string) {
+  const apiKey = Deno.env.get("DEEPSEEK_API_KEY") || Deno.env.get("SJTU_MODELS_API_KEY") || "";
+
+  if (!apiKey) {
+    return "";
+  }
+
+  const apiUrl = Deno.env.get("DEEPSEEK_API_BASE_URL") || Deno.env.get("SJTU_MODELS_API_URL") || DEFAULT_TITLE_API_URL;
+  const model = Deno.env.get("DEEPSEEK_TITLE_MODEL") || DEFAULT_TITLE_MODEL;
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      model,
+      messages: [
+        {
+          role: "system",
+          content: "你在帮 Zoey 给私人碎碎念取标题。标题要像本人随手写下的小题目，不要像 AI 总结、新闻标题、作文题或鸡汤句。克制、具体、轻一点，可以有一点诗意。只输出标题。"
+        },
+        {
+          role: "user",
+          content: `请给下面这条碎碎念拟一个 4 到 10 个汉字的中文标题。不要加标点，不要用“关于/一种/那些/思考/记录/随笔/碎片”等空泛词：\n\n${removeUrls(content).slice(0, 1000)}`
+        }
+      ],
+      temperature: 0.72,
+      max_tokens: 32
+    })
+  });
+
+  if (!response.ok) {
+    return "";
+  }
+
+  const data = await response.json();
+  return cleanGeneratedTitle(data?.choices?.[0]?.message?.content || data?.choices?.[0]?.text || data?.title || "");
+}
+
+async function resolveTitle(content: string, providedTitle = "") {
+  const fallbackTitle = getTitle(content, providedTitle);
+
+  if (removeUrls(providedTitle)) {
+    return fallbackTitle;
+  }
+
+  return (await generateSmartTitle(content)) || fallbackTitle;
 }
 
 function getExcerpt(content: string) {
@@ -219,9 +280,10 @@ Deno.serve(async (req) => {
   }
 
   const tags = normalizeTags(body.tags, content);
+  const title = await resolveTitle(content, body.title);
   const row = {
     publish_date: publishedAt.toISOString(),
-    title: getTitle(content, body.title),
+    title,
     content,
     tags,
     mood: null,
