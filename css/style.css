@@ -5,9 +5,9 @@
 @import url("./components.css");
 @import url("./header.css");
 @import url("./home.css");
-@import url("./pages/notes.css");
+@import url("./pages/notes.css?v=20260517-notes");
 @import url("./pages/writing.css");
 @import url("./pages/tools.css");
 @import url("./pages/gallery.css");
-@import url("./admin.css");
+@import url("./admin.css?v=20260517-notes");
 @import url("./theme.css");
